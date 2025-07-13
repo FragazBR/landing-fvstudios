@@ -1,0 +1,40 @@
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f4;
+  color: #333;
+}
+.hero {
+  background: #111;
+  color: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 3rem;
+}
+.hero p {
+  font-size: 1.25rem;
+}
+.cta {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  background: #04c;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+}
+.services {
+  padding: 2rem;
+  max-width: 800px;
+  margin: auto;
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+}
