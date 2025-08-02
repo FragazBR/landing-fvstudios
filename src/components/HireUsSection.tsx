@@ -22,17 +22,17 @@ const HireUsSection = () => {
         </div>
 
         <div className="max-w-6xl mx-auto fade-in">
-          <div className="glass-card overflow-hidden">
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b border-border/50">
-                    <th className="text-left p-6 text-lg font-medium text-foreground">Etapa</th>
-                    <th className="text-center p-6 text-lg font-medium text-foreground">Mês 1 – Diagnóstico</th>
-                    <th className="text-center p-6 text-lg font-medium text-foreground">Meses 2-4 – Execução</th>
-                  </tr>
-                </thead>
-                <tbody className="text-muted-foreground">
+            <div className="glass-card overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full text-xs sm:text-sm md:text-base">
+                  <thead>
+                    <tr className="border-b border-border/50">
+                      <th className="text-left p-4 sm:p-6 text-base sm:text-lg font-medium text-foreground">Etapa</th>
+                      <th className="text-center p-4 sm:p-6 text-base sm:text-lg font-medium text-foreground">Mês 1 – Diagnóstico</th>
+                      <th className="text-center p-4 sm:p-6 text-base sm:text-lg font-medium text-foreground">Meses 2-4 – Execução</th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-muted-foreground">
                   {[
                     { step: 'Sessões Estratégicas', month1: true, months24: false },
                     { step: 'Análise de Mercado', month1: true, months24: false },
@@ -43,17 +43,17 @@ const HireUsSection = () => {
                     { step: 'Otimização de Crescimento', month1: false, months24: true },
                   ].map((row, index) => (
                     <tr key={index} className="border-b border-border/30">
-                      <td className="p-6 font-medium">{row.step}</td>
-                      <td className="p-6 text-center">
+                      <td className="p-4 sm:p-6 font-medium">{row.step}</td>
+                      <td className="p-4 sm:p-6 text-center">
                         {row.month1 ? (
-                          <CheckCircle className="w-6 h-6 text-primary mx-auto" />
+                          <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mx-auto" />
                         ) : (
                           <span className="text-muted-foreground/50">–</span>
                         )}
                       </td>
-                      <td className="p-6 text-center">
+                      <td className="p-4 sm:p-6 text-center">
                         {row.months24 ? (
-                          <CheckCircle className="w-6 h-6 text-primary mx-auto" />
+                          <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mx-auto" />
                         ) : (
                           <span className="text-muted-foreground/50">–</span>
                         )}
@@ -61,12 +61,12 @@ const HireUsSection = () => {
                     </tr>
                   ))}
                   <tr className="border-b border-border/50">
-                    <td className="p-6 font-semibold text-foreground text-lg">Investimento Mensal</td>
-                    <td className="p-6 text-center">
-                      <div className="text-2xl font-bold text-gradient">R$1,499.00</div>
+                    <td className="p-4 sm:p-6 font-semibold text-foreground text-base sm:text-lg">Investimento Mensal</td>
+                    <td className="p-4 sm:p-6 text-center">
+                      <div className="text-lg sm:text-2xl font-bold text-gradient">R$1,499.00</div>
                     </td>
-                    <td className="p-6 text-center">
-                      <div className="text-2xl font-bold text-gradient">R$3,499.00<span className="text-base font-normal text-muted-foreground">/month</span></div>
+                    <td className="p-4 sm:p-6 text-center">
+                      <div className="text-lg sm:text-2xl font-bold text-gradient">R$3,499.00<span className="text-xs sm:text-base font-normal text-muted-foreground">/month</span></div>
                     </td>
                   </tr>
                 </tbody>
