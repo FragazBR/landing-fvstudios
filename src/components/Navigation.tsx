@@ -58,35 +58,39 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-      </div>
+      {/* Fim do nav */}
 
       {/* Mobile Menu */}
-      <div className={`lg:hidden fixed inset-y-0 right-0 w-full max-w-sm bg-background/95 backdrop-blur-xl border-l border-border mobile-menu ${
-        isMenuOpen ? 'open' : ''
-      }`}>
-        <div className="flex flex-col p-6 pt-20 space-y-6">
-          {['Home', 'Services', 'Hire Us', 'About', 'FAQ'].map((item) => (
-            <button
-              key={item}
+      <div className={`lg:hidden fixed inset-0 z-50 ${isMenuOpen ? '' : 'pointer-events-none'}`} style={{ display: isMenuOpen ? 'block' : 'none' }}>
+        {/* Backdrop escuro */}
+        <div className="absolute inset-0 bg-black bg-opacity-70 transition-opacity" onClick={() => setIsMenuOpen(false)}></div>
+        {/* Menu lateral */}
+        <div className={`fixed inset-y-0 right-0 w-full max-w-sm bg-background/95 backdrop-blur-xl border-l border-border mobile-menu ${isMenuOpen ? 'open' : ''}`}>
+          <div className="flex flex-col p-6 pt-20 space-y-6">
+            {['Home', 'Services', 'Hire Us', 'About', 'FAQ'].map((item) => (
+              <button
+                key={item}
+                onClick={() => {
+                  scrollToSection(item.toLowerCase().replace(' ', '-'));
+                  setIsMenuOpen(false);
+                }}
+                className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {item}
+              </button>
+            ))}
+            <button 
               onClick={() => {
-                scrollToSection(item.toLowerCase().replace(' ', '-'));
+                scrollToSection('hire-us');
                 setIsMenuOpen(false);
               }}
-              className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
+              className="btn-primary w-full mt-8"
             >
-              {item}
+              QUERO APLICAR
             </button>
-          ))}
-          <button 
-            onClick={() => {
-              scrollToSection('hire-us');
-              setIsMenuOpen(false);
-            }}
-            className="btn-primary w-full mt-8"
-          >
-            QUERO APLICAR
-          </button>
+          </div>
         </div>
+      </div>
       </div>
     </nav>
   );

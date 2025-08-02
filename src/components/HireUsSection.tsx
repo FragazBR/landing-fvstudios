@@ -27,9 +27,15 @@ const HireUsSection = () => {
                 <table className="w-full text-xs sm:text-sm md:text-base">
                   <thead>
                     <tr className="border-b border-border/50">
-                      <th className="text-left p-4 sm:p-6 text-base sm:text-lg font-medium text-foreground">Etapa</th>
-                      <th className="text-center p-4 sm:p-6 text-base sm:text-lg font-medium text-foreground">Mês 1 – Diagnóstico</th>
-                      <th className="text-center p-4 sm:p-6 text-base sm:text-lg font-medium text-foreground">Meses 2-4 – Execução</th>
+                    <th className="text-left p-2 sm:p-6 text-xs sm:text-lg font-medium text-foreground align-middle">Etapa</th>
+                    <th className="text-center p-2 sm:p-6 text-xs sm:text-lg font-medium text-foreground align-middle">
+                      <span className="block leading-tight">Diagnóstico</span>
+                      <span className="block text-[10px] sm:text-base font-normal leading-tight">Mês 1</span>
+                    </th>
+                    <th className="text-center p-2 sm:p-6 text-xs sm:text-lg font-medium text-foreground align-middle">
+                      <span className="block leading-tight">Execução</span>
+                      <span className="block text-[10px] sm:text-base font-normal leading-tight">Meses 2-4</span>
+                    </th>
                     </tr>
                   </thead>
                   <tbody className="text-muted-foreground">
@@ -61,12 +67,12 @@ const HireUsSection = () => {
                     </tr>
                   ))}
                   <tr className="border-b border-border/50">
-                    <td className="p-4 sm:p-6 font-semibold text-foreground text-base sm:text-lg">Investimento Mensal</td>
-                    <td className="p-4 sm:p-6 text-center">
-                      <div className="text-lg sm:text-2xl font-bold text-gradient">R$1,499.00</div>
+                    <td className="p-2 sm:p-6 font-semibold text-foreground text-xs sm:text-lg">Investimento Mensal</td>
+                    <td className="p-2 sm:p-6 text-center">
+                      <div className="text-base sm:text-2xl font-bold text-gradient">R$1,499.00</div>
                     </td>
-                    <td className="p-4 sm:p-6 text-center">
-                      <div className="text-lg sm:text-2xl font-bold text-gradient">R$3,499.00<span className="text-xs sm:text-base font-normal text-muted-foreground">/month</span></div>
+                    <td className="p-2 sm:p-6 text-center">
+                      <div className="text-base sm:text-2xl font-bold text-gradient">R$3,499.00<span className="text-[10px] sm:text-base font-normal text-muted-foreground">/month</span></div>
                     </td>
                   </tr>
                 </tbody>
