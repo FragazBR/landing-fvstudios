@@ -132,8 +132,7 @@ const HireUsSection = () => {
           <div className="font-semibold text-foreground text-lg md:text-xl mb-1">Investimento Mensal</div>
           <div className="text-3xl sm:text-4xl font-bold text-gradient mb-1">R$3.499<span className="text-lg font-normal text-muted-foreground">/mês</span></div>
           <div className="text-sm text-muted-foreground mb-0">
-            Acesso completo ao sistema de entregas, acompanhamento semanal e relatórios claros.<br />
-            <span>Sem taxas extras, sem surpresas.</span>
+            Acesso completo a nossa plataforma SaaS, com sistema de entregas, acompanhamento semanal e relatórios. <span className="whitespace-nowrap">Sem taxas extras, sem surpresas.</span>
           </div>
           <div className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1 mb-2">Vagas limitadas</div>
           <a

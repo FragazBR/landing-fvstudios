@@ -3,16 +3,7 @@ import retrofuturisticBg from '@/assets/retrofuturistic-bg.jpg';
 
 const ResultsSection = () => {
   return (
-    <section 
-      className="py-20 lg:py-32 relative"
-      style={{
-        backgroundImage: `url(${retrofuturisticBg})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+    <section className="py-20 lg:py-32 bg-background">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {[
