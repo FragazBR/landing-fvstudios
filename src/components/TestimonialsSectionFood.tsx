@@ -3,27 +3,27 @@ const TestimonialsSectionFood = () => {
     <section className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {[
+          [
             {
-              quote: "Depois da consultoria, nosso delivery triplicou e o salão vive cheio. O conteúdo realmente faz diferença!",
-              author: "Marina Souza",
-              role: "Sócia, Restaurante Sabor & Arte",
-              metric: "+200% Pedidos Delivery",
-              avatar: "/marina.png"
+              quote: "Eles foram capazes de realmente entender qual era a essência do restaurante. Entender qual era a nossa necessidade e a forma que a gente gostaria de divulgar os nossos produtos.",
+              author: "Ricardo D'Aquino",
+              role: "CEO Restaurante Drummond, Diretor Geral Qa+ Franquias, Expert iFood Brasil",
+              metric: "+180% Faturamento",
+              avatar: "/ricardo.png"
             },
             {
-              quote: "A estratégia de datas sazonais e promoções mudou o jogo. Nunca vendemos tanto em datas especiais!",
-              author: "Carlos Lima",
-              role: "Proprietário, Pizzaria Don Carlo",
-              metric: "+150% Vendas em datas especiais",
-              avatar: "/carlos.png"
+              quote: "Eu só queria, realmente, muito indicar, porque quando a gente encontra pessoas assim, que são batalhadoras.. e vão lá domingo de manhã pra fazer conteúdo pra Fabrica!.",
+              author: "Vannessa Macena",
+              role: "CEO, Franquia Mundo di chocolate",
+              metric: "+110% Leads",
+              avatar: "/vanessa.png"
             },
             {
-              quote: "O acompanhamento semanal e as fotos profissionais elevaram o padrão do nosso restaurante.",
-              author: "Fernanda Ribeiro",
-              role: "Chef Executiva, Bistrô da Fê",
-              metric: "+120% Engajamento Instagram",
-              avatar: "/fernanda.png"
+              quote: "Excelente trabalho, atendimento e parceria! Voces são baita parceiros da Pizza Bis, muito obrigado Franco e Suzana!",
+              author: "Luis Eduardo Kist",
+              role: "Presidente, Pizza Bis Franchising",
+              metric: "+240% Engajamento",
+              avatar: "/luiseduardo.png"
             }
           ].map((testimonial, index) => (
             <div key={index} className="glass-card fade-in flex flex-col items-center text-center">
