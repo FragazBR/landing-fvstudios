@@ -1,13 +1,13 @@
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
-import HeroSection from '@/components/HeroSection';
-import ResultsSection from '@/components/ResultsSection';
-import ServicesSection from '@/components/ServicesSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import MissionSection from '@/components/MissionSection';
+import HeroSectionFood from '@/components/HeroSectionFood';
+import ResultsSectionFood from '@/components/ResultsSectionFood';
+import ServicesSectionFood from '@/components/ServicesSectionFood';
+import TestimonialsSectionFood from '@/components/TestimonialsSectionFood';
+import MissionSectionFood from '@/components/MissionSectionFood';
 import HireUsSectionFood from '@/components/HireUsSectionFood';
-import AboutSection from '@/components/AboutSection';
-import FAQSection from '@/components/FAQSection';
+import AboutSectionFood from '@/components/AboutSectionFood';
+import FAQSectionFood from '@/components/FAQSectionFood';
 import Footer from '@/components/Footer';
 
 const Food = () => {
@@ -49,14 +49,14 @@ const Food = () => {
     <div className="min-h-screen bg-background">
       <Navigation scrollToSection={scrollToSection} />
       {/* Altere os componentes abaixo para versões específicas do nicho food/franquias se desejar */}
-      <HeroSection scrollToSection={scrollToSection} />
-      <ResultsSection />
-      <ServicesSection scrollToSection={scrollToSection} />
-      <TestimonialsSection />
-      <MissionSection />
+      <HeroSectionFood scrollToSection={scrollToSection} />
+      <ResultsSectionFood />
+      <ServicesSectionFood scrollToSection={scrollToSection} />
+      <TestimonialsSectionFood />
+      <MissionSectionFood />
       <HireUsSectionFood />
-      <AboutSection scrollToSection={scrollToSection} />
-      <FAQSection />
+      <AboutSectionFood scrollToSection={scrollToSection} />
+      <FAQSectionFood />
       <Footer />
     </div>
   );
