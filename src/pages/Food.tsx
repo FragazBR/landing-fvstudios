@@ -5,7 +5,7 @@ import ResultsSection from '@/components/ResultsSection';
 import ServicesSection from '@/components/ServicesSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import MissionSection from '@/components/MissionSection';
-import HireUsSection from '@/components/HireUsSection';
+import HireUsSectionFood from '@/components/HireUsSectionFood';
 import AboutSection from '@/components/AboutSection';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
@@ -54,7 +54,7 @@ const Food = () => {
       <ServicesSection scrollToSection={scrollToSection} />
       <TestimonialsSection />
       <MissionSection />
-      <HireUsSection />
+      <HireUsSectionFood />
       <AboutSection scrollToSection={scrollToSection} />
       <FAQSection />
       <Footer />
