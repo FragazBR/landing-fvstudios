@@ -5,30 +5,44 @@ const TestimonialsSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {[
             {
-              quote: "A Brand Scale transformou totalmente nossa presença digital. O faturamento cresceu 180% em apenas 4 meses.",
-              author: "Sarah Chen",
-              role: "CEO, TechFlow Solutions",
-              metric: "+180% Faturamento"
+              quote: "Eles foram capazes de realmente entender qual era a essência do restaurante. Entender qual era a nossa necessidade e a forma que a gente gostaria de divulgar os nossos produtos.",
+              author: "Ricardo D'Aquino",
+              role: "CEO Restaurante Drummond, Diretor Geral Qa+ Franquias, Expert iFood Brasil",
+              metric: "+180% Faturamento",
+              avatar: "/ricardo.png"
             },
             {
               quote: "A abordagem estratégica nos ajudou a clarear o posicionamento e atrair clientes ideais de forma consistente.",
               author: "Marcus Rivera",
               role: "Fundador, Design Studio",
-              metric: "+250% Leads"
+              metric: "+250% Leads",
+              avatar: "/placeholder.svg"
             },
             {
-              quote: "Finalmente, uma consultoria que entrega o que promete. Nossa autoridade de marca nunca foi tão forte.",
-              author: "Elena Vasquez",
-              role: "Diretora, Innovation Lab",
-              metric: "+300% Engajamento"
+              quote: "Excelente trabalho, atendimento e parceria! Voces são baita parceiros da Pizza Bis, muito obrigado Franco e Suzana!",
+              author: "Luis Eduardo Kist",
+              role: "Presidente, Pizza Bis Franchising",
+              metric: "+240% Engajamento",
+              avatar: "/luiseduardo.png"
             }
           ].map((testimonial, index) => (
-            <div key={index} className="glass-card fade-in">
+            <div key={index} className="glass-card fade-in flex flex-col items-center text-center">
               <div className="text-2xl font-light text-primary mb-4">{testimonial.metric}</div>
               <p className="text-muted-foreground mb-6 leading-relaxed italic">
                 "{testimonial.quote}"
               </p>
-              <div>
+              <div className="flex flex-col items-center">
+                <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-3 overflow-hidden">
+                  {/* Substitua o src pelo caminho real do avatar se desejar */}
+                  <img
+                    src={testimonial.avatar || '/public/placeholder.svg'}
+                    srcSet={`${testimonial.avatar || '/placeholder.svg'} 1x, ${(testimonial.avatar && testimonial.avatar.replace(/(\.[a-z]+)$/i, '@2x$1')) || '/placeholder.svg'} 2x`}
+                    sizes="(max-width: 768px) 64px, 80px"
+                    alt={testimonial.author}
+                    className="w-16 h-16 rounded-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="font-medium text-foreground">{testimonial.author}</div>
                 <div className="text-sm text-muted-foreground">{testimonial.role}</div>
               </div>

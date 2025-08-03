@@ -5,7 +5,7 @@ declare global {
     fbq?: (...args: unknown[]) => void;
   }
 }
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, Users, Search, ClipboardList, Settings, Calendar, Camera, Edit, ThumbsUp, Repeat, Send, BarChart3 } from 'lucide-react';
 
 const HireUsSection = () => {
   return (
@@ -21,91 +21,147 @@ const HireUsSection = () => {
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto fade-in">
-            <div className="glass-card overflow-hidden">
-              <div className="overflow-x-auto">
-                <table className="w-full text-xs sm:text-sm md:text-base">
-                  <thead>
-                    <tr className="border-b border-border/50">
-                    <th className="text-left p-2 sm:p-6 text-xs sm:text-lg font-medium text-foreground align-middle">Etapa</th>
-                    <th className="text-center p-2 sm:p-6 text-xs sm:text-lg font-medium text-foreground align-middle">
-                      <span className="block leading-tight">Diagnóstico</span>
-                      <span className="block text-[10px] sm:text-base font-normal leading-tight">Mês 1</span>
-                    </th>
-                    <th className="text-center p-2 sm:p-6 text-xs sm:text-lg font-medium text-foreground align-middle">
-                      <span className="block leading-tight">Execução</span>
-                      <span className="block text-[10px] sm:text-base font-normal leading-tight">Meses 2-4</span>
-                    </th>
-                    </tr>
-                  </thead>
-                  <tbody className="text-muted-foreground">
-                  {[
-                    { step: 'Sessões Estratégicas', month1: true, months24: false },
-                    { step: 'Análise de Mercado', month1: true, months24: false },
-                    { step: 'Plano Estratégico', month1: true, months24: false },
-                    { step: 'Consultorias Individuais', month1: false, months24: true },
-                    { step: 'Criação de Conteúdo', month1: false, months24: true },
-                    { step: 'Relatórios Semanais', month1: false, months24: true },
-                    { step: 'Otimização de Crescimento', month1: false, months24: true },
-                  ].map((row, index) => (
-                    <tr key={index} className="border-b border-border/30">
-                      <td className="p-4 sm:p-6 font-medium">{row.step}</td>
-                      <td className="p-4 sm:p-6 text-center">
-                        {row.month1 ? (
-                          <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mx-auto" />
-                        ) : (
-                          <span className="text-muted-foreground/50">–</span>
-                        )}
-                      </td>
-                      <td className="p-4 sm:p-6 text-center">
-                        {row.months24 ? (
-                          <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-primary mx-auto" />
-                        ) : (
-                          <span className="text-muted-foreground/50">–</span>
-                        )}
-                      </td>
-                    </tr>
-                  ))}
-                  <tr className="border-b border-border/50">
-                    <td className="p-2 sm:p-6 font-semibold text-foreground text-xs sm:text-lg">Investimento Mensal</td>
-                    <td className="p-2 sm:p-6 text-center">
-                      <div className="text-base sm:text-2xl font-bold text-gradient">R$1,499.00</div>
-                    </td>
-                    <td className="p-2 sm:p-6 text-center">
-                      <div className="text-base sm:text-2xl font-bold text-gradient">R$3,499.00<span className="text-[10px] sm:text-base font-normal text-muted-foreground">/month</span></div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+        <div className="max-w-3xl mx-auto fade-in">
+          <div className="grid gap-6">
+            {[
+              {
+                icon: Users,
+                title: 'Atendimento Estratégico',
+                subtitle: 'Entendimento do seu momento',
+                desc: 'Especialistas entendem seu negócio e objetivos para traçar o melhor caminho.',
+                periodo: 'Dias 1-3'
+              },
+              {
+                icon: Search,
+                title: 'Diagnóstico Profundo',
+                subtitle: 'Análise detalhada',
+                desc: 'Mapeamos oportunidades e desafios para criar uma estratégia sob medida.',
+                periodo: 'Dias 4-10'
+              },
+              {
+                icon: ClipboardList,
+                title: 'Planejamento de Execução',
+                subtitle: 'Plano de ação claro',
+                desc: 'Você recebe um roteiro prático, com etapas, prazos e entregas bem definidos.',
+                periodo: 'Dias 11-18'
+              },
+              {
+                icon: Settings,
+                title: 'Desenvolvimento dos Processos',
+                subtitle: 'Estruturação eficiente',
+                desc: 'Organizamos os bastidores para que tudo flua, sem improviso ou retrabalho.',
+                periodo: 'Dias 19-23'
+              },
+              {
+                icon: Calendar,
+                title: 'Agendamento das Produções',
+                subtitle: 'Tudo no tempo certo',
+                desc: 'Cronograma transparente e previsível para cada etapa.',
+                periodo: 'Dias 24-25'
+              },
+              {
+                icon: Camera,
+                title: 'Captação de Conteúdo',
+                subtitle: 'Seu melhor lado em destaque',
+                desc: 'Fotos, vídeos e bastidores reais produzidos todos os meses do projeto, mostrando o que faz sua marca única.',
+                periodo: 'Recorrente: todo mês'
+              },
+              {
+                icon: Edit,
+                title: 'Criação e Edição',
+                subtitle: 'Conteúdo que conecta',
+                desc: 'Transformamos ideias em materiais prontos para engajar e gerar resultado.',
+                periodo: 'Dias 29-32'
+              },
+              {
+                icon: ThumbsUp,
+                title: 'Aprovação',
+                subtitle: 'Você no controle',
+                desc: 'Nada vai ao ar sem seu ok. Você revisa e aprova cada entrega com facilidade.',
+                periodo: 'Dias 33-34'
+              },
+              {
+                icon: Repeat,
+                title: 'Ajustes Finais',
+                subtitle: 'Tudo do seu jeito',
+                desc: 'Fazemos os ajustes necessários para garantir que tudo fique perfeito para sua marca.',
+                periodo: 'Dias 35-36'
+              },
+              {
+                icon: Send,
+                title: 'Tráfego e Campanhas',
+                subtitle: 'Alcance ampliado',
+                desc: 'Impulsionamos seu conteúdo para chegar nas pessoas certas, com estratégia e inteligência.',
+                periodo: 'Dias 37-38'
+              },
+              {
+                icon: BarChart3,
+                title: 'Relatório e Métricas',
+                subtitle: 'Resultados na sua mão',
+                desc: 'Você recebe relatórios claros, com números que mostram o impacto real do trabalho.',
+                periodo: 'Dias 39-40'
+              },
+            ].map((row, index) => (
+              <div key={index} className="glass-card flex items-start gap-4 p-6 md:p-8">
+                <div className="flex-shrink-0 flex flex-col items-center justify-center pt-1">
+                  <CheckCircle className="w-7 h-7 text-primary mb-2" />
+                  <row.icon className="w-8 h-8 text-primary" />
+                </div>
+                <div>
+                  <div className="font-semibold text-foreground text-lg md:text-xl mb-1 flex items-center gap-2">
+                    {row.title}
+                    <span className="text-xs font-normal text-muted-foreground bg-primary/10 rounded px-2 py-0.5 ml-2">{row.periodo}</span>
+                  </div>
+                  <div className="text-primary text-sm md:text-base font-medium leading-tight mb-1">{row.subtitle}</div>
+                  <div className="text-muted-foreground text-sm md:text-base font-normal leading-tight">{row.desc}</div>
+                </div>
+              </div>
+            ))}
+            {/* Aviso recorrência de captações e produções */}
+            <div className="flex items-center justify-center gap-2 bg-primary/10 rounded-lg p-4 text-primary text-sm font-semibold mb-2">
+              <Camera className="w-8 h-8 text-primary" />
+              Captações e produções de conteúdo acontecem todos os meses durante os 120 dias do projeto.
             </div>
           </div>
         </div>
 
-        <div className="text-center mt-12 fade-in">
-          <div className="flex justify-center mb-8">
-            <a
-              id="whatsapp-cta"
-              href="https://wa.me/5547996311903?text=Oi%2C%20quero%20entrar%20na%20fila%20de%20espera.&utm_source=landing&utm_medium=button&utm_campaign=conversao-whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary text-base px-8 py-4"
-              onClick={() => {
-                if (window.gtag) {
-                  window.gtag('event', 'whatsapp_click', {
-                    event_category: 'engagement',
-                    event_label: 'Botão WhatsApp CTA',
-                    value: 1,
-                  });
-                }
-                if (window.fbq) {
-                  window.fbq('trackCustom', 'whatsapp_click');
-                }
-              }}
-            >
-              ACESSAR FILA DE ESPERA
-            </a>
+
+      {/* Card de investimento mensal unificado */}
+      <div className="max-w-md mx-auto mt-8 mb-8 fade-in">
+        <div className="glass-card flex flex-col items-center justify-center gap-2 p-6 text-center">
+          <div className="font-semibold text-foreground text-lg md:text-xl mb-1">Investimento Mensal</div>
+          <div className="text-3xl sm:text-4xl font-bold text-gradient mb-1">R$3.499<span className="text-lg font-normal text-muted-foreground">/mês</span></div>
+          <div className="text-sm text-muted-foreground mb-0">
+            Acesso completo ao sistema de entregas, acompanhamento semanal e relatórios claros.<br />
+            <span>Sem taxas extras, sem surpresas.</span>
           </div>
-          <p className="text-sm text-muted-foreground mb-8">Clique no botão para entrar na lista de espera.</p>
+          <div className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1 mb-2">Vagas limitadas</div>
+          <a
+            id="whatsapp-cta-card"
+            href="https://wa.me/5547996311903?text=Oi%2C%20quero%20entrar%20na%20fila%20de%20espera.&utm_source=landing&utm_medium=button&utm_campaign=conversao-whatsapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary text-base px-8 py-4 mt-2"
+            onClick={() => {
+              if (window.gtag) {
+                window.gtag('event', 'whatsapp_click', {
+                  event_category: 'engagement',
+                  event_label: 'Botão WhatsApp CTA Card',
+                  value: 1,
+                });
+              }
+              if (window.fbq) {
+                window.fbq('trackCustom', 'whatsapp_click');
+              }
+            }}
+          >
+            ACESSAR FILA DE ESPERA
+          </a>
+        </div>
+      </div>
+
+        <div className="text-center mt-12 fade-in">
+          <p className="text-sm text-muted-foreground mb-8">Clique no botão acima para entrar na lista de espera.</p>
           <div className="flex items-center justify-center space-x-2 text-sm text-muted-foreground">
             <div className="w-4 h-4 bg-primary/20 rounded-full flex items-center justify-center">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
