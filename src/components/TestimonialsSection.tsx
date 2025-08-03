@@ -12,11 +12,11 @@ const TestimonialsSection = () => {
               avatar: "/ricardo.png"
             },
             {
-              quote: "A abordagem estratégica nos ajudou a clarear o posicionamento e atrair clientes ideais de forma consistente.",
-              author: "Marcus Rivera",
-              role: "Fundador, Design Studio",
-              metric: "+250% Leads",
-              avatar: "/placeholder.svg"
+              quote: "Eu só queria, realmente, muito indicar, porque quando a gente encontra pessoas assim, que são batalhadoras.. e vão lá domingo de manhã pra fazer conteúdo pra Fabrica!.",
+              author: "Vannessa Macena",
+              role: "CEO, Franquia Mundo di chocolate",
+              metric: "+110% Leads",
+              avatar: "/vanessa.png"
             },
             {
               quote: "Excelente trabalho, atendimento e parceria! Voces são baita parceiros da Pizza Bis, muito obrigado Franco e Suzana!",
