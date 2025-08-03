@@ -31,7 +31,15 @@ const Index = () => {
     return () => observer.disconnect();
   }, []);
 
-  const scrollToSection = (id: string) => {
+  const scrollToSection = (id: string, opts?: { forceSectionTop?: boolean }) => {
+    // Se o id for 'hire-us' e NÃO for forçado para o topo, rola até o botão do CTA do card de investimento mensal
+    if (id === 'hire-us' && !opts?.forceSectionTop) {
+      const ctaBtn = document.getElementById('whatsapp-cta-card');
+      if (ctaBtn) {
+        ctaBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+    }
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

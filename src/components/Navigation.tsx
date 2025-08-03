@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 interface NavigationProps {
-  scrollToSection: (id: string) => void;
+  scrollToSection: (id: string, opts?: { forceSectionTop?: boolean }) => void;
 }
 
 const Navigation = ({ scrollToSection }: NavigationProps) => {
@@ -30,18 +30,24 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
           
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {['Início', 'Serviços', 'Contrate', 'Sobre', 'FAQ'].map((item, idx) => {
-              const sectionIds = ['home', 'services', 'hire-us', 'about', 'faq'];
-              return (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(sectionIds[idx])}
-                  className="text-muted-foreground hover:text-foreground transition-colors font-medium"
-                >
-                  {item}
-                </button>
-              );
-            })}
+          {['Início', 'Serviços', 'Contrate', 'Sobre', 'FAQ'].map((item, idx) => {
+            const sectionIds = ['home', 'services', 'hire-us', 'about', 'faq'];
+            return (
+              <button
+                key={item}
+                onClick={() => {
+                  if (item === 'Contrate') {
+                    scrollToSection(sectionIds[idx], { forceSectionTop: true });
+                  } else {
+                    scrollToSection(sectionIds[idx]);
+                  }
+                }}
+                className="text-muted-foreground hover:text-foreground transition-colors font-medium"
+              >
+                {item}
+              </button>
+            );
+          })}
             <button 
               onClick={() => scrollToSection('hire-us')}
               className="btn-primary"

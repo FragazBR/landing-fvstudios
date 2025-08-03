@@ -6,7 +6,17 @@ const Footer = () => {
           <div className="mb-6">
             <p className="text-lg font-medium mb-2">Tem interesse?</p>
             <p className="text-muted-foreground mb-4">Clique no botão abaixo e entre para a fila de espera</p>
-            <button className="btn-primary text-base px-8 py-3 mb-6" onClick={() => window.scrollTo({top: document.getElementById('hire-us')?.offsetTop || 0, behavior: 'smooth'})}>QUERO APLICAR</button>
+            <button
+              className="btn-primary text-base px-8 py-3 mb-6"
+              onClick={() => {
+                const ctaBtn = document.getElementById('whatsapp-cta-card');
+                if (ctaBtn) {
+                  ctaBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+              }}
+            >
+              QUERO APLICAR
+            </button>
           </div>
           <div className="flex flex-col items-center mb-2">
             <img src="/Logotipo-FVstudios-Branco.png" alt="Logo fvstudios" className="h-8 lg:h-10 w-auto mb-4" />

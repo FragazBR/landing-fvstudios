@@ -23,7 +23,12 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
             <span className="text-sm md:text-xl lg:text-2xl text-muted-foreground inline-block mt-2 md:mt-0">Transformamos histórias em influência. E influência em vendas.</span>
           </p>
           
-          <div className="flex flex-col items-center space-y-4 mb-16">
+          <div className="flex flex-col items-center space-y-4 mb-8">
+            <div className="flex flex-col sm:flex-row items-center gap-2">
+              <span className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1">4 meses de duração</span>
+              <span className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1">Vagas limitadas: 30 marcas</span>
+            </div>
+            <span className="text-xs text-primary font-semibold uppercase tracking-wide">Garanta a sua!</span>
             <button 
               onClick={() => scrollToSection('hire-us')}
               className="btn-primary text-lg px-10 py-5 group"
@@ -35,11 +40,16 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           </div>
 
           <div className="slide-in-left max-w-5xl mx-auto">
-            <img 
-              src={dashboardHero} 
-              alt="Strategic Dashboard" 
-              className="w-full rounded-3xl shadow-2xl glass-card"
-            />
+            <div className="aspect-w-16 aspect-h-9 w-full rounded-3xl overflow-hidden shadow-2xl glass-card">
+              <iframe
+                src="https://www.youtube.com/embed/SEU_VIDEO_ID_AQUI"
+                title="Conheça nossos serviços FVSTUDIOS"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="w-full h-full"
+              ></iframe>
+            </div>
           </div>
         </div>
       </div>

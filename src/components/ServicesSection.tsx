@@ -1,7 +1,7 @@
 import { Brain, BarChart3, Target, Zap, TrendingUp, Users } from 'lucide-react';
 
 interface ServicesSectionProps {
-  scrollToSection: (id: string) => void;
+  scrollToSection: (id: string, opts?: { forceSectionTop?: boolean }) => void;
 }
 
 const ServicesSection = ({ scrollToSection }: ServicesSectionProps) => {
@@ -74,7 +74,7 @@ const ServicesSection = ({ scrollToSection }: ServicesSectionProps) => {
 
         <div className="text-center mt-12 fade-in">
           <button 
-            onClick={() => scrollToSection('hire-us')}
+            onClick={() => scrollToSection('hire-us', { forceSectionTop: true })}
             className="neuro-btn text-primary hover:text-primary-foreground"
           >
             Ver Plano Completo
