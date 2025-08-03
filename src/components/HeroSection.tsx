@@ -11,16 +11,16 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light heading-tight mb-6">
-            <span className="text-gradient">Estratégia, Conteúdo</span><br />
-            <span className="text-foreground">e Execução.</span><br />
+            <span className="text-gradient font-bold">Conexão, Autoridade</span><br />
+            <span className="text-foreground text-4xl md:text-6xl lg:text-7xl">e Conteúdo que Converte.</span><br />
             <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-extralight">
-              Tudo que sua marca precisa para crescer com consistência.
+              A nova geração de marcas cresce com <span className="text-white">presença</span>, não com anúncios.
             </span>
           </h1>
           
-          <p className="text-xl lg:text-2xl text-muted-foreground font-light max-w-4xl mx-auto mb-12 leading-relaxed">
-            Diagnóstico profundo. Plano sob medida. Execução precisa.<br />
-            Transformamos ideias em resultados reais.
+          <p className="text-base md:text-xl lg:text-2xl text-white font-light max-w-4xl mx-auto mb-12 leading-relaxed">
+            Diagnóstico real. Estratégia. Execução. Resultados.<br />
+            <span className="text-sm md:text-xl lg:text-2xl text-muted-foreground inline-block mt-2 md:mt-0">Transformamos histórias em influência. E influência em vendas.</span>
           </p>
           
           <div className="flex flex-col items-center space-y-4 mb-16">
