@@ -35,6 +35,19 @@ const HeroSectionFood = ({ scrollToSection }: HeroSectionFoodProps) => {
             </button>
             <p className="text-sm text-muted-foreground">Clique para entrar na lista de espera</p>
           </div>
+          {/* Card do vídeo Instagram */}
+          <div className="max-w-2xl mx-auto mt-8 fade-in">
+            <div className="aspect-w-9 aspect-h-16 w-full rounded-3xl overflow-hidden shadow-2xl glass-card flex flex-col items-center justify-center">
+              <iframe
+                src="https://www.instagram.com/reel/DF2Rvuyx5-H/embed"
+                title="Vídeo Instagram FVSTUDIOS Food"
+                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full min-h-[500px]"
+                style={{ border: 0 }}
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
     </section>
