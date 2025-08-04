@@ -16,9 +16,9 @@ const LeadStep2 = () => {
         </a>
         <div className="bg-primary/10 text-primary font-semibold rounded px-3 py-1 mb-2">-40% no custo de aquisição de clientes em 4 semanas</div>
         <blockquote className="text-muted-foreground text-base italic border-l-4 border-primary pl-4 mb-2">
-          "Não tem como não recomenda o trabalho da Vinci a todos. Ela é construída por pessoas que já fizeram e ninguém vai saber mais do que quem já fez."
+          "Eles foram capazes de realmente entender qual era a essência do restaurante. Entender qual era a nossa necessidade e a forma que a gente gostaria de divulgar os nossos produtos."
         </blockquote>
-        <div className="text-sm text-muted-foreground font-medium">Bruno Tusset - CEO Saipos</div>
+        <div className="text-sm text-muted-foreground font-medium">Ricardo D'Aquino - CEO Restaurante Drummond, Diretor Geral Qa+ Franquias, Expert iFood Brasil</div>
       </div>
     </section>
   );
