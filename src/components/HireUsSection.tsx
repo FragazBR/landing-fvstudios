@@ -20,6 +20,14 @@ const HireUsSection = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState('');
   const [showModal, setShowModal] = useState(false);
+
+  // Dispara evento do Pixel ao abrir o modal
+  const handleOpenModal = () => {
+    setShowModal(true);
+    if (window.fbq) {
+      window.fbq('trackCustom', 'LeadFormView');
+    }
+  };
   const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +57,10 @@ const HireUsSection = () => {
       // eslint-disable-next-line no-console
       console.error('Supabase error:', error);
     } else {
+      // Evento Pixel: Lead enviado
+      if (window.fbq) {
+        window.fbq('trackCustom', 'LeadFormSubmit');
+      }
       setSuccess(true);
       setForm({ nome: '', email: '', telefone: '', empresa: '' });
       setShowModal(false);
@@ -259,7 +271,7 @@ const HireUsSection = () => {
             id="whatsapp-cta-card"
             type="button"
             className="btn-primary text-base px-8 py-4 mt-2"
-            onClick={() => setShowModal(true)}
+            onClick={handleOpenModal}
           >
             ACESSAR FILA DE ESPERA
           </button>
