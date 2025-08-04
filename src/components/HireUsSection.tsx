@@ -75,7 +75,7 @@ const HireUsSection = () => {
           {/* Modal do formulário de captação de leads via Supabase */}
           {showModal && (
             <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
-              <div className="glass-card p-6 md:p-8 flex flex-col gap-4 w-full max-w-md relative animate-fade-in">
+              <div className="glass-card p-6 md:p-12 flex flex-col gap-6 w-[95vw] max-w-2xl max-h-[90vh] relative animate-fade-in overflow-auto items-center justify-center text-center">
                 <button
                   className="absolute top-2 right-2 text-xl text-muted-foreground hover:text-primary"
                   onClick={() => setShowModal(false)}
@@ -84,14 +84,14 @@ const HireUsSection = () => {
                 >
                   ×
                 </button>
-                <h3 className="text-xl font-semibold mb-2">Precisamos de algumas informações para a sua aplicação.</h3>
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 w-full">Precisamos de algumas informações para a sua aplicação.</h3>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-6 w-full items-center justify-center">
                   <input
                     type="text"
                     name="nome"
                     required
                     placeholder="Nome Completo*"
-                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    className="input w-full max-w-xl mx-auto bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary text-lg md:text-2xl py-4 px-5 rounded-lg text-center"
                     value={form.nome}
                     onChange={handleChange}
                     disabled={loading}
@@ -101,7 +101,7 @@ const HireUsSection = () => {
                     name="telefone"
                     required
                     placeholder="Telefone*"
-                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    className="input w-full max-w-xl mx-auto bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary text-lg md:text-2xl py-4 px-5 rounded-lg text-center"
                     value={form.telefone}
                     onChange={handleChange}
                     disabled={loading}
@@ -111,7 +111,7 @@ const HireUsSection = () => {
                     name="email"
                     required
                     placeholder="E-mail*"
-                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    className="input w-full max-w-xl mx-auto bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary text-lg md:text-2xl py-4 px-5 rounded-lg text-center"
                     value={form.email}
                     onChange={handleChange}
                     disabled={loading}
@@ -121,23 +121,23 @@ const HireUsSection = () => {
                     name="empresa"
                     required
                     placeholder="Empresa*"
-                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    className="input w-full max-w-xl mx-auto bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary text-lg md:text-2xl py-4 px-5 rounded-lg text-center"
                     value={form.empresa}
                     onChange={handleChange}
                     disabled={loading}
                   />
-                  <button type="submit" className="btn-primary w-full mt-2" disabled={loading}>
+                  <button type="submit" className="btn-primary w-full max-w-xl mx-auto mt-4 text-xl md:text-2xl py-4 rounded-lg" disabled={loading}>
                     {loading ? 'Enviando...' : 'OK'}
                   </button>
-                  {success && <span className="text-green-600 text-sm">Recebido! Em breve entraremos em contato.</span>}
-                  {error && <span className="text-red-600 text-sm">{error}</span>}
+                  {success && <span className="text-green-600 text-lg block w-full">Recebido! Em breve entraremos em contato.</span>}
+                  {error && <span className="text-red-600 text-lg block w-full">{error}</span>}
                   {/* Se erro, mostrar alerta mais destacado */}
                   {error && (
-                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded text-xs mt-1">
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded text-base mt-1 w-full max-w-xl mx-auto">
                       {error}
                     </div>
                   )}
-                  <span className="text-xs text-muted-foreground mt-1">Prometemos não enviar spam.</span>
+                  <span className="text-base text-muted-foreground mt-2 block w-full">Prometemos não enviar spam.</span>
                 </form>
               </div>
             </div>
