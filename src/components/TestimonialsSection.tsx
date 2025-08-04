@@ -35,8 +35,10 @@ const TestimonialsSection = () => {
                 <div className="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-3 overflow-hidden">
                   {/* Substitua o src pelo caminho real do avatar se desejar */}
                   <img
-                    src={testimonial.avatar || '/public/placeholder.svg'}
-                    srcSet={`${testimonial.avatar || '/placeholder.svg'} 1x, ${(testimonial.avatar && testimonial.avatar.replace(/(\.[a-z]+)$/i, '@2x$1')) || '/placeholder.svg'} 2x`}
+                    src={testimonial.avatar || '/placeholder.svg'}
+                    srcSet={testimonial.avatar
+                      ? `${testimonial.avatar} 1x, ${testimonial.avatar.replace(/(\.[a-z]+)$/i, '@2x$1')} 2x`
+                      : '/placeholder.svg 1x, /placeholder.svg 2x'}
                     sizes="(max-width: 768px) 64px, 80px"
                     alt={testimonial.author}
                     className="w-16 h-16 rounded-full object-cover"
