@@ -5,10 +5,14 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Routes, Route } from "react-router-dom";
+
 import LeadStep2 from "./pages/LeadStep2";
 import Index from "./pages/Index";
 import Food from "./pages/Food";
 import NotFound from "./pages/NotFound";
+import Admin from "./pages/Admin";
+import KanbanCRM from "./pages/KanbanCRM";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +64,9 @@ const App = () => {
           <Route path="/" element={<Index />} />
           <Route path="/food" element={<Food />} />
           <Route path="/lead-step2" element={<LeadStep2 />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/crm" element={<KanbanCRM />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </TooltipProvider>

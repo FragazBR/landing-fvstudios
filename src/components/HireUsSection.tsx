@@ -79,7 +79,7 @@ const HireUsSection = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl lg:text-6xl font-light heading-tight mb-6">
-            Pronto para <span className="text-gradient">crescer</span> seu negócio?
+            Pronto para <span className="text-gradient"><span>crescer</span></span> seu negócio?
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
             Um plano de 4 meses para diagnosticar, executar e escalar.
