@@ -36,7 +36,7 @@ const HireUsSectionFood = () => {
                 icon: ClipboardList,
                 title: 'Plano de Ação Personalizado',
                 subtitle: 'Estratégia para seu público',
-                desc: 'Criamos um roteiro prático para aumentar vendas, engajamento e recorrência.',
+                desc: 'Criamos um roteiro prático para aumentar vendas, engajamento e recorrência. Captação e produção de conteúdo já começam nesta etapa.',
                 periodo: 'Dias 11-18'
               },
               {
@@ -112,7 +112,7 @@ const HireUsSectionFood = () => {
               </div>
             ))}
           </div>
-          <div className="flex items-center justify-center gap-2 bg-primary/10 rounded-lg p-4 text-primary text-sm font-semibold mb-2">
+          <div className="flex items-center justify-center gap-2 bg-primary/10 rounded-lg p-4 text-primary text-sm font-semibold mb-2 mt-6">
             <Camera className="w-8 h-8 text-primary" />
             Captações e produções de conteúdo gastronômico acontecem todos os meses durante os 120 dias do projeto.
           </div>

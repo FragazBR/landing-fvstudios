@@ -93,7 +93,7 @@
 
   body {
     @apply bg-background text-foreground font-inter antialiased;
-    background: radial-gradient(ellipse at top, hsl(220 15% 8%), hsl(220 15% 5%));
+    /* background removido para exibir o Spline 3D global */
   }
 }
 

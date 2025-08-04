@@ -1,15 +1,65 @@
 // Declaração para evitar erro TS de propriedades customizadas no window
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { createClient } from '@supabase/supabase-js';
+import { CheckCircle, Users, Search, ClipboardList, Settings, Calendar, Camera, Edit, ThumbsUp, Repeat, Send, BarChart3 } from 'lucide-react';
 declare global {
   interface Window {
     gtag?: (...args: unknown[]) => void;
     fbq?: (...args: unknown[]) => void;
   }
 }
-import { CheckCircle, Users, Search, ClipboardList, Settings, Calendar, Camera, Edit, ThumbsUp, Repeat, Send, BarChart3 } from 'lucide-react';
+
+const supabaseUrl = 'https://euumovpwxxkmgplpntwp.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dW1vdnB3eHhrbWdwbHBudHdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxNzQyNDIsImV4cCI6MjA2OTc1MDI0Mn0.xNLh8LN0q1_uCuIcyUMD7ktqKhgOPWZo7Zn00ZKx89k';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const HireUsSection = () => {
+  const [form, setForm] = useState({ nome: '', email: '', telefone: '', empresa: '' });
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const navigate = useNavigate();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError('');
+    setSuccess(false);
+    const { data, error } = await supabase.from('leads').insert([
+      {
+        nome: form.nome,
+        email: form.email,
+        empresa: form.empresa,
+        fonte: 'landing-fvstudios',
+        hook: '',
+        tipo_lead: 'diagnostico',
+        telefone: form.telefone
+      }
+    ]);
+    setLoading(false);
+    if (error) {
+      setError('Erro ao enviar: ' + (error.message || 'Tente novamente.'));
+      // Para depuração, log detalhado no console
+      // eslint-disable-next-line no-console
+      console.error('Supabase error:', error);
+    } else {
+      setSuccess(true);
+      setForm({ nome: '', email: '', telefone: '', empresa: '' });
+      setShowModal(false);
+      navigate('/lead-step2');
+    }
+  };
+
+
   return (
-    <section id="hire-us" className="py-20 lg:py-32">
+    <section id="hire-us" className="relative overflow-hidden py-20 lg:py-32">
+      {/* Spline 3D Background removido para background global */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl lg:text-6xl font-light heading-tight mb-6">
@@ -22,6 +72,76 @@ const HireUsSection = () => {
         </div>
 
         <div className="max-w-3xl mx-auto fade-in">
+          {/* Modal do formulário de captação de leads via Supabase */}
+          {showModal && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60">
+              <div className="glass-card p-6 md:p-8 flex flex-col gap-4 w-full max-w-md relative animate-fade-in">
+                <button
+                  className="absolute top-2 right-2 text-xl text-muted-foreground hover:text-primary"
+                  onClick={() => setShowModal(false)}
+                  aria-label="Fechar"
+                  type="button"
+                >
+                  ×
+                </button>
+                <h3 className="text-xl font-semibold mb-2">Precisamos de algumas informações para a sua aplicação.</h3>
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                  <input
+                    type="text"
+                    name="nome"
+                    required
+                    placeholder="Nome Completo*"
+                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    value={form.nome}
+                    onChange={handleChange}
+                    disabled={loading}
+                  />
+                  <input
+                    type="tel"
+                    name="telefone"
+                    required
+                    placeholder="Telefone*"
+                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    value={form.telefone}
+                    onChange={handleChange}
+                    disabled={loading}
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    placeholder="E-mail*"
+                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    value={form.email}
+                    onChange={handleChange}
+                    disabled={loading}
+                  />
+                  <input
+                    type="text"
+                    name="empresa"
+                    required
+                    placeholder="Empresa*"
+                    className="input w-full bg-white text-black placeholder-gray-500 border border-gray-300 focus:border-primary"
+                    value={form.empresa}
+                    onChange={handleChange}
+                    disabled={loading}
+                  />
+                  <button type="submit" className="btn-primary w-full mt-2" disabled={loading}>
+                    {loading ? 'Enviando...' : 'OK'}
+                  </button>
+                  {success && <span className="text-green-600 text-sm">Recebido! Em breve entraremos em contato.</span>}
+                  {error && <span className="text-red-600 text-sm">{error}</span>}
+                  {/* Se erro, mostrar alerta mais destacado */}
+                  {error && (
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded text-xs mt-1">
+                      {error}
+                    </div>
+                  )}
+                  <span className="text-xs text-muted-foreground mt-1">Prometemos não enviar spam.</span>
+                </form>
+              </div>
+            </div>
+          )}
           <div className="grid gap-6">
             {[
               {
@@ -135,27 +255,14 @@ const HireUsSection = () => {
             Acesso completo a nossa plataforma SaaS, com sistema de entregas, acompanhamento semanal e relatórios. <span className="whitespace-nowrap">Sem taxas extras, sem surpresas.</span>
           </div>
           <div className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1 mb-2">Vagas limitadas</div>
-          <a
+          <button
             id="whatsapp-cta-card"
-            href="https://wa.me/5547996311903?text=Oi%2C%20quero%20entrar%20na%20fila%20de%20espera.&utm_source=landing&utm_medium=button&utm_campaign=conversao-whatsapp"
-            target="_blank"
-            rel="noopener noreferrer"
+            type="button"
             className="btn-primary text-base px-8 py-4 mt-2"
-            onClick={() => {
-              if (window.gtag) {
-                window.gtag('event', 'whatsapp_click', {
-                  event_category: 'engagement',
-                  event_label: 'Botão WhatsApp CTA Card',
-                  value: 1,
-                });
-              }
-              if (window.fbq) {
-                window.fbq('trackCustom', 'whatsapp_click');
-              }
-            }}
+            onClick={() => setShowModal(true)}
           >
             ACESSAR FILA DE ESPERA
-          </a>
+          </button>
         </div>
       </div>
 
