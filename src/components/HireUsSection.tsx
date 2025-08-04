@@ -59,7 +59,11 @@ const HireUsSection = () => {
     } else {
       // Evento Pixel: Lead enviado
       if (window.fbq) {
-        window.fbq('trackCustom', 'LeadFormSubmit');
+        window.fbq('trackCustom', 'LeadFormSubmit', {
+          nome: form.nome,
+          email: form.email,
+          telefone: form.telefone
+        });
       }
       setSuccess(true);
       setForm({ nome: '', email: '', telefone: '', empresa: '' });
