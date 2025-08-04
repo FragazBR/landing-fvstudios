@@ -265,15 +265,14 @@ const HireUsSectionFood = () => {
               Acesso completo a nossa plataforma SaaS, com sistema de entregas, acompanhamento semanal e relatórios. <span className="whitespace-nowrap">Sem taxas extras, sem surpresas.</span>
             </div>
             <div className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1 mb-2">Vagas limitadas</div>
-            <a
+            <button
               id="whatsapp-cta-card"
-              href="https://wa.me/5547996311903?text=Oi%2C%20quero%20entrar%20na%20fila%20de%20espera%20food.&utm_source=landing-food&utm_medium=button&utm_campaign=conversao-whatsapp"
-              target="_blank"
-              rel="noopener noreferrer"
+              type="button"
               className="btn-primary text-base px-8 py-4 mt-2"
+              onClick={handleOpenModal}
             >
               ACESSAR FILA DE ESPERA
-            </a>
+            </button>
           </div>
         </div>
 
