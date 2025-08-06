@@ -48,19 +48,22 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen">
-      <SplineBackground />
-      <Navigation scrollToSection={scrollToSection} />
-      <HeroSection scrollToSection={scrollToSection} />
-      <ResultsSection />
-      <ServicesSection scrollToSection={scrollToSection} />
-      <TestimonialsSection />
-      <MissionSection />
-      <HireUsSection />
-      <AboutSection scrollToSection={scrollToSection} />
-      <FAQSection />
-      <Footer />
-    </div>
+    <>
+      <style>{`.spline-watermark { display: none !important; }`}</style>
+      <div className="min-h-screen">
+        <SplineBackground />
+        <Navigation scrollToSection={scrollToSection} />
+        <HeroSection scrollToSection={scrollToSection} />
+        <ResultsSection />
+        <ServicesSection scrollToSection={scrollToSection} />
+        <TestimonialsSection />
+        <MissionSection />
+        <HireUsSection />
+        <AboutSection scrollToSection={scrollToSection} />
+        <FAQSection />
+        <Footer />
+      </div>
+    </>
   );
 };
 
