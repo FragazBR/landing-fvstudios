@@ -49,6 +49,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SplineBackground />
       <Navigation scrollToSection={scrollToSection} />
       <HeroSection scrollToSection={scrollToSection} />
       <ResultsSection />
