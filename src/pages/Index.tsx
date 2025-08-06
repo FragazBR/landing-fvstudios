@@ -9,6 +9,7 @@ import HireUsSection from '@/components/HireUsSection';
 import AboutSection from '@/components/AboutSection';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
+import SplineBackground from '@/components/SplineBackground';
 
 const Index = () => {
   useEffect(() => {
