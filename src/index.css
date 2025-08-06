@@ -92,8 +92,8 @@
   }
 
   body {
-    @apply bg-background text-foreground font-inter antialiased;
-    /* background removido para exibir o Spline 3D global */
+    @apply text-foreground font-inter antialiased;
+    /* bg removido para exibir o Spline 3D global */
   }
 }
 
