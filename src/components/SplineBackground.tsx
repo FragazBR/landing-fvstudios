@@ -5,19 +5,21 @@ const SplineBackground = () => {
   const [hasError, setHasError] = useState(false);
 
   return (
-    <div 
-      className="spline-background-container"
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100vw',
-        height: '100vh',
-        zIndex: -1,
-        overflow: 'hidden',
-        background: hasError ? 'linear-gradient(135deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1))' : 'transparent'
-      }}
-    >
+    <>
+      <style>{`.spline-watermark { display: none !important; }`}</style>
+      <div 
+        className="spline-background-container"
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100vw',
+          height: '100vh',
+          zIndex: -1,
+          overflow: 'hidden',
+          background: hasError ? 'linear-gradient(135deg, hsl(var(--primary)/0.1), hsl(var(--accent)/0.1))' : 'transparent'
+        }}
+      >
       {!isLoaded && !hasError && (
         <div 
           className="loading-placeholder"
@@ -83,6 +85,7 @@ const SplineBackground = () => {
         </div>
       )}
     </div>
+    </>
   );
 };
 
