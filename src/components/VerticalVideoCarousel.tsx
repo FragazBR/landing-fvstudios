@@ -1,4 +1,6 @@
 import React, { useRef, useState } from 'react';
+import { Card } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 
 const videos = [
   '/videos/video1.mp4',
@@ -14,6 +16,7 @@ const CARD_OVERLAP = 12;
 
 const CascadeStackCarousel: React.FC = () => {
   const [active, setActive] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(true); // controla play/pause do principal
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -23,14 +26,18 @@ const CascadeStackCarousel: React.FC = () => {
       if (!video) return;
       if (idx === active) {
         video.muted = false;
-        video.play();
+        if (isPlaying) {
+          video.play();
+        } else {
+          video.pause();
+        }
       } else {
         video.muted = true;
         video.pause();
         video.currentTime = 0;
       }
     });
-  }, [active]);
+  }, [active, isPlaying]);
 
   return (
     <div style={{ width: '100%', maxWidth: CARD_WIDTH * 2.2, margin: '0 auto', position: 'relative', minHeight: '70vh' }}>
@@ -98,9 +105,14 @@ const CascadeStackCarousel: React.FC = () => {
               return null;
             }
             return (
-              <div
+              <Card
                 key={src}
-                className={`glass-card transition-all duration-500 shadow-lg rounded-2xl p-0 bg-transparent`}
+                className={cn(
+                  "transition-all duration-500 shadow-sm p-0 bg-card cursor-pointer group border border-muted",
+                  offsetIdx === 0
+                    ? "hover:border-primary/70"
+                    : "hover:border-primary/70 hover:scale-[1.03] hover:shadow-lg",
+                )}
                 style={{
                   position: 'absolute',
                   left: `calc(50% + ${x}px)`,
@@ -110,19 +122,20 @@ const CascadeStackCarousel: React.FC = () => {
                   height: '55vh',
                   zIndex,
                   opacity,
-                  boxShadow: offsetIdx === 0 ? '0 4px 16px rgba(0,0,0,0.18)' : '0 2px 8px rgba(0,0,0,0.10)',
-                  border: offsetIdx === 0 ? '3px solid #222' : '2px solid #ccc',
-                  background: '#fff',
-                  cursor: 'pointer',
                   transition: 'all 0.5s cubic-bezier(.4,2,.3,1)',
                 }}
                 onClick={() => {
-                  setActive(idx);
-                  setTimeout(() => {
-                    if (videoRefs.current[idx]) {
-                      videoRefs.current[idx].play();
-                    }
-                  }, 100);
+                  if (offsetIdx === 0) {
+                    setIsPlaying((prev) => !prev);
+                  } else {
+                    setActive(idx);
+                    setIsPlaying(true);
+                    setTimeout(() => {
+                      if (videoRefs.current[idx]) {
+                        videoRefs.current[idx].play();
+                      }
+                    }, 100);
+                  }
                 }}
               >
                 <video
@@ -131,14 +144,15 @@ const CascadeStackCarousel: React.FC = () => {
                   loop
                   controls
                   playsInline
+                  className={cn(
+                    "w-full h-full object-cover rounded-lg transition-transform duration-300"
+                  )}
                   style={{
                     width: '100%',
                     height: '100%',
-                    objectFit: 'cover',
-                    borderRadius: '1rem',
                   }}
                 />
-              </div>
+              </Card>
             );
           })}
         </div>
