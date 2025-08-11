@@ -74,16 +74,22 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
           {/* Menu lateral com rolagem e sombra */}
           <div className="fixed inset-y-0 right-0 w-full max-w-sm h-full bg-[#18181b] border-l border-border shadow-2xl mobile-menu" style={{ overflowY: 'auto' }}>
             <div className="flex flex-col p-6 pt-20 space-y-6">
-              {['Home', 'Services', 'Hire Us', 'About', 'FAQ'].map((item) => (
+              {[
+                { label: 'Início', id: 'home' },
+                { label: 'Serviços', id: 'services' },
+                { label: 'Contrate', id: 'hire-us' },
+                { label: 'Sobre', id: 'about' },
+                { label: 'FAQ', id: 'faq' }
+              ].map((item) => (
                 <button
-                  key={item}
+                  key={item.id}
                   onClick={() => {
-                    scrollToSection(item.toLowerCase().replace(' ', '-'));
+                    scrollToSection(item.id);
                     setIsMenuOpen(false);
                   }}
                   className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  {item}
+                  {item.label}
                 </button>
               ))}
               <button 
