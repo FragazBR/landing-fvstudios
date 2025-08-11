@@ -124,114 +124,134 @@ const CascadeStackCarousel: React.FC = () => {
   }, [isCentered, active]);
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        position: 'relative',
-        width: '100%',
-        maxWidth: CARD_WIDTH,
-        height: '70vh',
-        margin: '0 auto',
-        userSelect: 'none',
-        cursor: 'grab',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        overflowX: 'hidden',
-      }}
-      onMouseEnter={() => setIsHovering(true)}
-      onMouseLeave={() => setIsHovering(false)}
-    >
-      {videos.map((src, idx) => {
-        const isActive = idx === active;
-        const rightIdx = idx - active;
-        // Cards atrás do principal: escala menor, opacidade reduzida, shadow, 15% visível
-        if (rightIdx > 0 && rightIdx <= 4) {
-          // No mobile, cards atrás ficam 10% à direita do card principal
-          const isMobile = window.innerWidth < 900;
-          const offset = rightIdx * CARD_WIDTH * (isMobile ? 0.10 : 0.15);
-          return (
-            <div
-              key={src}
-              className={`glass-card transition-all duration-300 shadow-lg rounded-2xl p-0 bg-transparent`}
-              style={{
-                position: 'absolute',
-                left: `calc(50% + ${offset}px)`,
-                top: '50%',
-                transform: 'translate(-50%, -50%) scale(0.92)',
-                width: '100%',
-                maxWidth: CARD_WIDTH,
-                height: '65vh',
-                zIndex: 100 - rightIdx,
-                opacity: 0.5 + 0.1 * (5 - rightIdx),
-                overflow: 'hidden',
-                cursor: 'default',
-                clipPath: 'inset(0 ' + (CARD_WIDTH * 0.85) + 'px 0 0)',
-              }}
-            >
-              <video
-                ref={(el) => (videoRefs.current[idx] = el)}
-                src={src}
-                loop
-                playsInline
-                controls={false}
+    <>
+      <div
+        ref={containerRef}
+        style={{
+          position: 'relative',
+          width: '100%',
+          maxWidth: CARD_WIDTH,
+          height: '70vh',
+          margin: '0 auto',
+          userSelect: 'none',
+          cursor: 'grab',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          overflowX: 'hidden',
+        }}
+        onMouseEnter={() => setIsHovering(true)}
+        onMouseLeave={() => setIsHovering(false)}
+      >
+        {videos.map((src, idx) => {
+          const isActive = idx === active;
+          const rightIdx = idx - active;
+          // Cards atrás do principal: escala menor, opacidade reduzida, shadow, 15% visível
+          if (rightIdx > 0 && rightIdx <= 4) {
+            // No mobile, cards atrás ficam 10% à direita do card principal
+            const isMobile = window.innerWidth < 900;
+            const offset = rightIdx * CARD_WIDTH * (isMobile ? 0.10 : 0.15);
+            return (
+              <div
+                key={src}
+                className={`glass-card transition-all duration-300 shadow-lg rounded-2xl p-0 bg-transparent`}
                 style={{
                   position: 'absolute',
+                  left: `calc(50% + ${offset}px)`,
                   top: '50%',
-                  left: '50%',
+                  transform: 'translate(-50%, -50%) scale(0.92)',
                   width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  transform: 'translate(-50%, -50%)',
-                  borderRadius: '1rem',
+                  maxWidth: CARD_WIDTH,
+                  height: '65vh',
+                  zIndex: 100 - rightIdx,
+                  opacity: 0.5 + 0.1 * (5 - rightIdx),
+                  overflow: 'hidden',
+                  cursor: 'default',
+                  clipPath: 'inset(0 ' + (CARD_WIDTH * 0.85) + 'px 0 0)',
                 }}
-              />
-            </div>
-          );
-        }
-        // Card ativo (frente)
-        else if (rightIdx === 0) {
-          return (
-            <div
-              key={src}
-              className={`glass-card transition-all duration-300 shadow-lg rounded-2xl p-0 bg-transparent`}
-              style={{
-                position: 'absolute',
-                left: '50%',
-                top: '50%',
-                transform: 'translate(-50%, -50%) scale(1)',
-                width: '100%',
-                maxWidth: CARD_WIDTH,
-                height: '65vh',
-                zIndex: 100,
-                overflow: 'hidden',
-                cursor: 'default',
-                clipPath: 'inset(0px 0 0 0)',
-              }}
-            >
-              <video
-                ref={(el) => (videoRefs.current[idx] = el)}
-                src={src}
-                loop
-                controls
-                playsInline
+              >
+                <video
+                  ref={(el) => (videoRefs.current[idx] = el)}
+                  src={src}
+                  loop
+                  playsInline
+                  controls={false}
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transform: 'translate(-50%, -50%)',
+                    borderRadius: '1rem',
+                  }}
+                />
+              </div>
+            );
+          }
+          // Card ativo (frente)
+          else if (rightIdx === 0) {
+            return (
+              <div
+                key={src}
+                className={`glass-card transition-all duration-300 shadow-lg rounded-2xl p-0 bg-transparent`}
                 style={{
                   position: 'absolute',
-                  top: '50%',
                   left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%) scale(1)',
                   width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  transform: 'translate(-50%, -50%)',
-                  borderRadius: '1rem',
+                  maxWidth: CARD_WIDTH,
+                  height: '65vh',
+                  zIndex: 100,
+                  overflow: 'hidden',
+                  cursor: 'default',
+                  clipPath: 'inset(0px 0 0 0)',
                 }}
-              />
-            </div>
-          );
-        }
-        return null;
-      })}
-    </div>
+              >
+                <video
+                  ref={(el) => (videoRefs.current[idx] = el)}
+                  src={src}
+                  loop
+                  controls
+                  playsInline
+                  style={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transform: 'translate(-50%, -50%)',
+                    borderRadius: '1rem',
+                  }}
+                />
+              </div>
+            );
+          }
+          return null;
+        })}
+      </div>
+      {/* Botão para descer a página caso o scroll esteja bloqueado */}
+      {isCentered && active < videos.length - 1 && (
+        <div style={{ textAlign: 'center', marginTop: 24 }}>
+          <button
+            onClick={() => window.scrollBy({ top: window.innerHeight * 0.1, behavior: 'smooth' })}
+            style={{
+              padding: '12px 32px',
+              fontSize: 18,
+              borderRadius: 8,
+              background: '#222',
+              color: '#fff',
+              border: 'none',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+              cursor: 'pointer',
+            }}
+          >Descer página</button>
+        </div>
+      )}
+    </>
   );
 };
 
