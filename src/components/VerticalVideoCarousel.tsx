@@ -116,21 +116,26 @@ const CascadeStackCarousel: React.FC = () => {
                   cursor: 'pointer',
                   transition: 'all 0.5s cubic-bezier(.4,2,.3,1)',
                 }}
-                onClick={() => setActive(idx)}
+                onClick={() => {
+                  setActive(idx);
+                  if (idx === active && videoRefs.current[idx]) {
+                    videoRefs.current[idx].play();
+                  }
+                }}
               >
                 <video
-                ref={(el) => (videoRefs.current[idx] = el)}
-                src={src}
-                loop
-                controls
-                playsInline
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  borderRadius: '1rem',
-                }}
-              />
+                  ref={(el) => (videoRefs.current[idx] = el)}
+                  src={src}
+                  loop
+                  controls
+                  playsInline
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    borderRadius: '1rem',
+                  }}
+                />
               </div>
             );
           })}
