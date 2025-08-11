@@ -13,16 +13,29 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light heading-tight mb-6">
-            <span className="text-gradient font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.1]">Conexão, Autoridade</span><br />
-            <span className="text-foreground text-2xl md:text-6xl lg:text-7xl leading-[1.1]">e Conteúdo que Converte.</span><br />
-            <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-extralight leading-[1.1]">
-              <span className="text-xl md:text-3xl lg:text-4xl leading-[1]">A nova geração de marcas cresce com <span className="text-white">presença</span>, não com anúncios.</span>
+            <span className="block md:hidden">
+              <span className="text-gradient font-bold text-3xl leading-[1.1]">Conexão, Autoridade</span><br />
+              <span className="text-2xl">e Conteúdo que Converte.</span>
+            </span>
+            <span className="hidden md:inline">
+              <span className="text-gradient font-bold text-6xl lg:text-7xl leading-[1.1]">Conexão, Autoridade</span><br />
+              <span className="text-foreground text-6xl lg:text-7xl leading-[1.1]">e Conteúdo que Converte.</span>
+            </span>
+            <br></br>
+            <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-extralight leading-[1]">
+              <span className="block md:hidden text-xl leading-[1]">
+                A nova geração de marcas cresce<br />
+                com <span className="text-white">presença</span>, não com anúncios.
+              </span>
+              <span className="hidden md:inline md:text-3xl lg:text-4xl leading-[1]">
+                <br />A nova geração de marcas cresce com <span className="text-white">presença</span>, não com anúncios.
+              </span>
             </span>
           </h1>
           
           <p className="text-base md:text-xl lg:text-2xl text-white font-light max-w-4xl mx-auto mb-12 leading-relaxed">
-            Diagnóstico real. Estratégia. Execução. Resultados.<br />
-            <span className="text-sm md:text-xl lg:text-2xl text-muted-foreground inline-block mt-2 md:mt-0">Transformamos histórias em influência. E influência em vendas.</span>
+            <span className="text-sm md:text-xl lg:text-2xl">Diagnóstico real. Estratégia. Execução. Resultados.</span><br />
+            <span className="text-sm md:text-xl lg:text-2xl text-muted-foreground inline-block mt-2 md:mt-0">Transformamos histórias em influência. <br />E influência em vendas.</span>
           </p>
           
           <div className="flex flex-col items-center space-y-4 mb-8">
