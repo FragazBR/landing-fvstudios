@@ -5,7 +5,10 @@ const Footer = () => {
         <div className="text-center">
           <div className="mb-6">
             <p className="text-lg font-medium mb-2">Tem interesse?</p>
-            <p className="text-muted-foreground mb-4">Clique no botão abaixo e entre para a fila de espera</p>
+            <p className="text-muted-foreground mb-4">
+              Clique no botão abaixo e
+              <span className="block sm:inline">entre para a fila de espera</span>
+            </p>
             <button
               className="btn-primary text-base px-8 py-3 mb-6"
               onClick={() => {

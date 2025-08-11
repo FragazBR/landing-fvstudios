@@ -10,14 +10,17 @@ const AboutSection = ({ scrollToSection }: AboutSectionProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl lg:text-6xl font-light heading-tight mb-6">
-            Quem constrói de verdade não precisa falar mais,
-            <span className="block sm:inline">{' '}
-              <span className="sm:hidden">precisa <span className="text-gradient">ser visto</span>.</span>
-              <span className="hidden sm:inline">precisa ser <span className="text-gradient">visto</span>.</span>
+            <span className="hidden sm:inline text-base sm:text-4xl lg:text-6xl font-light heading-tight mb-6 text-center">
+              Quem constrói de verdade não precisa falar mais, precisa ser <span className="text-gradient">visto</span>.
+            </span>
+            <span className="block sm:hidden max-w-xs mx-auto text-xl font-light heading-tight mb-6 text-center">
+              Quem constrói de verdade não<br />
+              precisa falar mais, <span className="text-gradient">precisa ser visto</span>.
             </span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
-            Somos estrategistas e executores focados em escalar marcas com inteligência, processo e posicionamento de verdade.
+            <span className="block sm:hidden text-base">Somos estrategistas e executores focados em escalar marcas com inteligência, processo e posicionamento de verdade.</span>
+            <span className="hidden sm:inline">Somos estrategistas e executores focados em escalar marcas com inteligência, processo e posicionamento de verdade.</span>
           </p>
         </div>
 
@@ -50,7 +53,8 @@ const AboutSection = ({ scrollToSection }: AboutSectionProps) => {
 
           <div className="glass-card fade-in text-center">
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-8">
-              Você é excelente no que faz, mas está perdendo espaço para profissionais medíocres que sabem se vender e dominam a internet.
+              <span className="block sm:hidden text-sm">Você é excelente no que faz, mas está perdendo espaço para profissionais medíocres que sabem se vender e dominam a internet.</span>
+              <span className="hidden sm:inline">Você é excelente no que faz, mas está perdendo espaço para profissionais medíocres que sabem se vender e dominam a internet.</span>
             </p>
             <p className="text-lg md:text-xl text-foreground mb-4 font-medium">
               <span className="hidden sm:inline">
@@ -59,9 +63,9 @@ const AboutSection = ({ scrollToSection }: AboutSectionProps) => {
                 A gente resolve isso pra você.
               </span>
               <span className="block sm:hidden">
-                <span className="text-sm font-normal text-foreground leading-tight">Hoje, não basta ser excelente. É preciso</span><br />
-                <span className="text-gradient text-lg font-semibold leading-tight">ser visto, lembrado e desejado.</span><br />
-                <span className="text-sm font-normal text-foreground leading-tight">A gente resolve isso pra você.</span>
+                <span className="text-sm font-normal text-foreground leading-tight mb-0">Hoje, não basta ser excelente. É preciso</span><br />
+                <span className="text-gradient text-lg font-semibold leading-tight mb-0">ser visto, lembrado e desejado.</span><br />
+                <span className="text-sm font-normal text-foreground leading-tight mt-0">A gente resolve isso pra você.</span>
               </span>
             </p>
             <button className="btn-primary" onClick={() => scrollToSection && scrollToSection('hire-us')}>

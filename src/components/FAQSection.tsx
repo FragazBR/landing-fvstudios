@@ -5,9 +5,9 @@ const FAQSection = () => {
     <section id="faq" className="py-10 lg:py-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
-          <h2 className="text-4xl lg:text-6xl font-light heading-tight mb-6">
+          <h2 className="text-3xl lg:text-4xl font-light heading-tight mb-6">
             Dúvidas frequentes?<br />
-            <span className="text-gradient">Nós temos as respostas.</span>
+            <span className="text-gradient text-2xl sm:text-4xl font-semibold">Nós temos as respostas.</span>
           </h2>
         </div>
 
