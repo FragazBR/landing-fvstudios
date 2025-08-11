@@ -53,7 +53,14 @@ const AboutSection = ({ scrollToSection }: AboutSectionProps) => {
               Você é excelente no que faz, mas está perdendo espaço para profissionais medíocres que sabem se vender e dominam a internet.
             </p>
             <p className="text-lg md:text-xl text-foreground mb-4 font-medium">
-              Hoje, não basta ser excelente. <span className="whitespace-nowrap">É preciso <span className="text-gradient">ser visto, lembrado e desejado</span></span>.<br />
+              Hoje, não basta ser excelente.
+              <span className="inline">
+                <span className="hidden sm:inline"> É preciso <span className="text-gradient">ser visto, lembrado e desejado</span></span>
+                <span className="block sm:hidden">
+                  <span className="text-base font-normal text-muted-foreground">É preciso</span><br />
+                  <span className="text-gradient">ser visto, lembrado e desejado</span>
+                </span>
+              </span>.<br />
               A gente resolve isso pra você.
             </p>
             <button className="btn-primary" onClick={() => scrollToSection && scrollToSection('hire-us')}>
