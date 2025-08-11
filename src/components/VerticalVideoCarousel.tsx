@@ -152,7 +152,7 @@ const CascadeStackCarousel: React.FC = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: '#222',
+                background: 'transparent',
                 boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
               }}
             >
@@ -165,7 +165,7 @@ const CascadeStackCarousel: React.FC = () => {
                   objectFit: 'cover',
                   aspectRatio: '9/16',
                   borderRadius: '2rem',
-                  background: '#222',
+                  background: 'transparent',
                   opacity: 0.7,
                 }}
                 autoPlay={false}
@@ -195,7 +195,7 @@ const CascadeStackCarousel: React.FC = () => {
                 overflow: 'hidden',
                 cursor: 'pointer',
                 boxShadow: '0 12px 40px hsla(220, 15%, 5%, 0.4), 0 0 20px hsla(267, 84%, 68%, 0.1)',
-                background: '#222',
+                background: 'transparent',
               }}
             >
               <video
@@ -207,7 +207,7 @@ const CascadeStackCarousel: React.FC = () => {
                   objectFit: 'cover',
                   aspectRatio: '9/16',
                   borderRadius: '2rem',
-                  background: '#222',
+                  background: 'transparent',
                   opacity: 1,
                 }}
                 autoPlay={isActive}
