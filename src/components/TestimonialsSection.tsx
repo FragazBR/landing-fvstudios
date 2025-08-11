@@ -36,7 +36,7 @@ const TestimonialsSection = () => {
                   <img
                     src={testimonial.avatar || '/placeholder.svg'}
                     srcSet={testimonial.avatar
-                      ? `${testimonial.avatar} 1x, ${testimonial.avatar.replace(/(\.[a-z]+)$/i, '@2x$1')} 2x`
+                      ? `${testimonial.avatar} 1x, ${testimonial.avatar} 2x`
                       : '/placeholder.svg 1x, /placeholder.svg 2x'}
                     sizes="(max-width: 600px) 80px, 80px"
                     alt={testimonial.author}
