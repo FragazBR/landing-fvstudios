@@ -135,7 +135,7 @@ const CascadeStackCarousel: React.FC = () => {
           return (
             <div
               key={src}
-              className={`glass-card transition-all duration-300 shadow-lg rounded-2xl`}
+              className={`glass-card transition-all duration-300 shadow-lg rounded-2xl p-0 bg-transparent`}
               style={{
                 position: 'absolute',
                 left: `calc(50% + ${offset}px)`,
@@ -164,7 +164,7 @@ const CascadeStackCarousel: React.FC = () => {
                   height: '100%',
                   objectFit: 'cover',
                   aspectRatio: '9/16',
-                  borderRadius: '2rem',
+                  borderRadius: 'inherit',
                   background: 'transparent',
                   opacity: 0.7,
                 }}
@@ -182,7 +182,7 @@ const CascadeStackCarousel: React.FC = () => {
           return (
             <div
               key={src}
-              className={`glass-card transition-all duration-300 shadow-lg rounded-2xl`}
+              className={`glass-card transition-all duration-300 shadow-lg rounded-2xl p-0 bg-transparent`}
               style={{
                 position: 'absolute',
                 left: '50%',
@@ -206,7 +206,7 @@ const CascadeStackCarousel: React.FC = () => {
                   height: '100%',
                   objectFit: 'cover',
                   aspectRatio: '9/16',
-                  borderRadius: '2rem',
+                  borderRadius: 'inherit',
                   background: 'transparent',
                   opacity: 1,
                 }}
