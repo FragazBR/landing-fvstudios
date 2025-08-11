@@ -69,9 +69,21 @@ const CascadeStackCarousel: React.FC = () => {
       if ((isCentered && isHovering) || (isCentered && window.innerWidth < 900)) {
         e.preventDefault();
         if (e.deltaY > 0) {
-          setActive((prev) => Math.min(prev + 1, videos.length - 1));
+          setActive((prev) => {
+            const next = Math.min(prev + 1, videos.length - 1);
+            if (next !== prev) {
+              window.scrollBy({ top: window.innerHeight * 0.1, behavior: 'smooth' });
+            }
+            return next;
+          });
         } else if (e.deltaY < 0) {
-          setActive((prev) => Math.max(prev - 1, 0));
+          setActive((prev) => {
+            const next = Math.max(prev - 1, 0);
+            if (next !== prev) {
+              window.scrollBy({ top: -window.innerHeight * 0.1, behavior: 'smooth' });
+            }
+            return next;
+          });
         }
       }
     };
@@ -157,8 +169,8 @@ const CascadeStackCarousel: React.FC = () => {
                 ref={(el) => (videoRefs.current[idx] = el)}
                 src={src}
                 loop
-                muted
                 playsInline
+                controls={false}
                 style={{
                   position: 'absolute',
                   top: '50%',
@@ -197,7 +209,7 @@ const CascadeStackCarousel: React.FC = () => {
                 ref={(el) => (videoRefs.current[idx] = el)}
                 src={src}
                 loop
-                muted
+                controls
                 playsInline
                 style={{
                   position: 'absolute',
