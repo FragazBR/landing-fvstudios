@@ -145,7 +145,9 @@ const CascadeStackCarousel: React.FC = () => {
         const rightIdx = idx - active;
         // Cards atrás do principal: escala menor, opacidade reduzida, shadow, 15% visível
         if (rightIdx > 0 && rightIdx <= 4) {
-          const offset = rightIdx * CARD_WIDTH * 0.15;
+          // No mobile, cards atrás ficam 10% à direita do card principal
+          const isMobile = window.innerWidth < 900;
+          const offset = rightIdx * CARD_WIDTH * (isMobile ? 0.10 : 0.15);
           return (
             <div
               key={src}
