@@ -65,8 +65,10 @@ const CascadeStackCarousel: React.FC = () => {
   }, [isCentered, active]);
 
   useEffect(() => {
+    const card = videoRefs.current[active];
+    if (!card) return;
     const handleWheel = (e: WheelEvent) => {
-      if ((isCentered && isHovering) || (isCentered && window.innerWidth < 900)) {
+      if (isCentered) {
         e.preventDefault();
         if (e.deltaY > 0) {
           setActive((prev) => {
@@ -87,9 +89,9 @@ const CascadeStackCarousel: React.FC = () => {
         }
       }
     };
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [isCentered, active, isHovering]);
+    card.addEventListener('wheel', handleWheel, { passive: false });
+    return () => card.removeEventListener('wheel', handleWheel);
+  }, [isCentered, active]);
 
   // Touch mobile: swipe para navegar
   useEffect(() => {
