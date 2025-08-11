@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="py-12 border-t border-border/50">
+    <footer className="py-12 border-t border-border/50 relative z-20">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center">
           <div className="mb-6">
@@ -9,9 +9,10 @@ const Footer = () => {
             <button
               className="btn-primary text-base px-8 py-3 mb-6"
               onClick={() => {
-                const ctaBtn = document.getElementById('whatsapp-cta-card');
+                // Evita conflito de id duplicado, busca pelo card principal
+                const ctaBtn = document.querySelector('#hire-us .btn-primary');
                 if (ctaBtn) {
-                  ctaBtn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                  (ctaBtn as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
                 }
               }}
             >
