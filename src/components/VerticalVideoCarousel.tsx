@@ -118,9 +118,11 @@ const CascadeStackCarousel: React.FC = () => {
                 }}
                 onClick={() => {
                   setActive(idx);
-                  if (idx === active && videoRefs.current[idx]) {
-                    videoRefs.current[idx].play();
-                  }
+                  setTimeout(() => {
+                    if (videoRefs.current[idx]) {
+                      videoRefs.current[idx].play();
+                    }
+                  }, 100);
                 }}
               >
                 <video
