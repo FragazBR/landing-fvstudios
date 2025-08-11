@@ -13,8 +13,12 @@ const ServicesSection = ({ scrollToSection }: ServicesSectionProps) => {
             Você não precisa de mais conteúdo. Precisa de uma estratégia que transforma <span className="text-gradient">atenção</span> em <span className="text-gradient">resultado</span>.
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
-            Nosso trabalho começa entendendo onde sua marca está<br />
-            e termina com ela sendo vista, seguida e desejada.
+            <span className="block md:inline">
+              Nosso trabalho começa entendendo onde sua marca está e termina com
+            </span>
+            <span className="block">
+              ela sendo vista, seguida e desejada.
+            </span>
           </p>
         </div>
 
