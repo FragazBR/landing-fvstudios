@@ -50,7 +50,7 @@ const Index = () => {
   return (
     <>
       <style>{`.spline-watermark { display: none !important; }`}</style>
-      <div className="min-h-screen">
+      <div className="min-h-screen relative">
         <FragmentBackground />
         <Navigation scrollToSection={scrollToSection} />
         <HeroSection scrollToSection={scrollToSection} />
