@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Navigation from '@/components/Navigation';
+import FragmentBackground from '@/components/FragmentBackground';
 import HeroSectionFood from '@/components/HeroSectionFood';
 import ResultsSectionFood from '@/components/ResultsSectionFood';
 import ServicesSectionFood from '@/components/ServicesSectionFood';
@@ -47,6 +48,7 @@ const Food = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <FragmentBackground />
       <Navigation scrollToSection={scrollToSection} />
       {/* Altere os componentes abaixo para versões específicas do nicho food/franquias se desejar */}
       <HeroSectionFood scrollToSection={scrollToSection} />

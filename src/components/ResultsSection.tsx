@@ -3,9 +3,10 @@ import retrofuturisticBg from '@/assets/retrofuturistic-bg.jpg';
 
 const ResultsSection = () => {
   return (
-    <section className="py-20 lg:py-32 bg-background">
+    <section className="py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
+          {/* ...existing code for cards... */}
           {[
             { number: '+500', label: 'marcas atendidas em SC', icon: Users },
             { number: '3x', label: 'mais leads qualificados em até 90 dias', icon: TrendingUp },

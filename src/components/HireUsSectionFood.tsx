@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { createClient } from '@supabase/supabase-js';
+import { supabase } from '@/lib/supabaseClient';
 import { CheckCircle, Users, Search, ClipboardList, Settings, Calendar, Camera, Edit, ThumbsUp, Repeat, Send, BarChart3 } from 'lucide-react';
 declare global {
   interface Window {
@@ -10,9 +10,7 @@ declare global {
   }
 }
 
-const supabaseUrl = 'https://euumovpwxxkmgplpntwp.supabase.co';
-const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImV1dW1vdnB3eHhrbWdwbHBudHdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQxNzQyNDIsImV4cCI6MjA2OTc1MDI0Mn0.xNLh8LN0q1_uCuIcyUMD7ktqKhgOPWZo7Zn00ZKx89k';
-const supabase = createClient(supabaseUrl, supabaseKey);
+
 
 const HireUsSectionFood = () => {
   const [form, setForm] = useState({ nome: '', email: '', telefone: '', empresa: '' });
@@ -53,7 +51,7 @@ const HireUsSectionFood = () => {
     setLoading(false);
     if (error) {
       setError('Erro ao enviar: ' + (error.message || 'Tente novamente.'));
-      // eslint-disable-next-line no-console
+      console.error('Supabase error:', error);
       console.error('Supabase error:', error);
     } else {
       if (window.fbq) {

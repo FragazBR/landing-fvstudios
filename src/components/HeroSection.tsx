@@ -1,5 +1,7 @@
+
 import { ArrowRight } from 'lucide-react';
 import dashboardHero from '@/assets/dashboard-hero.jpg';
+import CascadeStackCarousel from './VerticalVideoCarousel';
 
 interface HeroSectionProps {
   scrollToSection: (id: string) => void;
@@ -40,16 +42,7 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
           </div>
 
           <div className="slide-in-left max-w-5xl mx-auto">
-            <div className="aspect-w-16 aspect-h-9 w-full rounded-3xl overflow-hidden shadow-2xl glass-card">
-              <iframe
-                src="https://www.youtube.com/embed/SEU_VIDEO_ID_AQUI"
-                title="Conheça nossos serviços FVSTUDIOS"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-              ></iframe>
-            </div>
+            <CascadeStackCarousel />
           </div>
         </div>
       </div>

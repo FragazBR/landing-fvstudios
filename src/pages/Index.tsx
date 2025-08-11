@@ -9,7 +9,7 @@ import HireUsSection from '@/components/HireUsSection';
 import AboutSection from '@/components/AboutSection';
 import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
-import SplineBackground from '@/components/SplineBackground';
+import FragmentBackground from '@/components/FragmentBackground';
 
 const Index = () => {
   useEffect(() => {
@@ -51,7 +51,7 @@ const Index = () => {
     <>
       <style>{`.spline-watermark { display: none !important; }`}</style>
       <div className="min-h-screen">
-        <SplineBackground />
+        <FragmentBackground />
         <Navigation scrollToSection={scrollToSection} />
         <HeroSection scrollToSection={scrollToSection} />
         <ResultsSection />
