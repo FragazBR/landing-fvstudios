@@ -17,6 +17,21 @@ const CascadeStackCarousel: React.FC = () => {
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Só o vídeo ativo toca e tem som, os outros pausam
+  React.useEffect(() => {
+    videoRefs.current.forEach((video, idx) => {
+      if (!video) return;
+      if (idx === active) {
+        video.muted = false;
+        video.play();
+      } else {
+        video.muted = true;
+        video.pause();
+        video.currentTime = 0;
+      }
+    });
+  }, [active]);
+
   return (
     <div style={{ width: '100%', maxWidth: CARD_WIDTH * 2.2, margin: '0 auto', position: 'relative', minHeight: '70vh' }}>
       <div style={{ position: 'relative', height: '65vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -104,18 +119,18 @@ const CascadeStackCarousel: React.FC = () => {
                 onClick={() => setActive(idx)}
               >
                 <video
-                  ref={(el) => (videoRefs.current[idx] = el)}
-                  src={src}
-                  loop
-                  controls
-                  playsInline
-                  style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    borderRadius: '1rem',
-                  }}
-                />
+                ref={(el) => (videoRefs.current[idx] = el)}
+                src={src}
+                loop
+                controls
+                playsInline
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '1rem',
+                }}
+              />
               </div>
             );
           })}
