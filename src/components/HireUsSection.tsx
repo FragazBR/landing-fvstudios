@@ -145,7 +145,7 @@ const HireUsSection = () => {
           </div>
         </div>
       )}
-      <section id="hire-us" className="relative overflow-hidden py-20 lg:py-32">
+      <section id="hire-us" className="relative overflow-hidden py-10 lg:py-16">
         {/* Spline 3D Background removido para background global */}
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16 fade-in">

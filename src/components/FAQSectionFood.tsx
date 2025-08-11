@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 const FAQSectionFood = () => {
   return (
-    <section id="faq" className="py-20 lg:py-32">
+    <section id="faq" className="py-10 lg:py-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-4xl lg:text-6xl font-light heading-tight mb-6">

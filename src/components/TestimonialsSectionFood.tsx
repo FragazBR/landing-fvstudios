@@ -1,6 +1,6 @@
 const TestimonialsSectionFood = () => {
   return (
-    <section className="py-20 lg:py-32">
+    <section className="py-10 lg:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {[
