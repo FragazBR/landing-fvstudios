@@ -12,9 +12,9 @@ const AboutSection = ({ scrollToSection }: AboutSectionProps) => {
           <h2 className="text-4xl lg:text-6xl font-light heading-tight mb-6">
             Quem constrói de verdade não precisa falar mais,
             <span className="block sm:inline">{' '}
-              <span className="sm:hidden">é preciso <span className="text-gradient">ser visto</span></span>
-              <span className="hidden sm:inline">precisa ser <span className="text-gradient">visto</span></span>
-            </span>.
+              <span className="sm:hidden">precisa <span className="text-gradient">ser visto</span>.</span>
+              <span className="hidden sm:inline">precisa ser <span className="text-gradient">visto</span>.</span>
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
             Somos estrategistas e executores focados em escalar marcas com inteligência, processo e posicionamento de verdade.

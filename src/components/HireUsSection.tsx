@@ -266,10 +266,10 @@ const HireUsSection = () => {
       {/* Card de investimento mensal unificado */}
       <div className="max-w-md mx-auto mt-8 mb-8 fade-in">
         <div className="glass-card flex flex-col items-center justify-center gap-2 p-6 text-center">
-          <div className="font-semibold text-foreground text-lg md:text-xl mb-1">Investimento Mensal</div>
-          <div className="text-3xl sm:text-4xl font-bold text-gradient mb-1">R$3.499<span className="text-lg font-normal text-muted-foreground">/mês</span></div>
+          <div className="font-semibold text-foreground text-lg md:text-xl mb-1">Orçamento Personalizado</div>
           <div className="text-sm text-muted-foreground mb-0">
-            Acesso completo a nossa plataforma SaaS, com sistema de entregas, acompanhamento semanal e relatórios. <span className="whitespace-nowrap">Sem taxas extras, sem surpresas.</span>
+            Solicite uma proposta sob medida para o seu negócio. Entraremos em contato para entender suas necessidades e apresentar o melhor plano.<br />
+            Você terá acesso completo ao nosso sistema SaaS, com sistema de entregas, acompanhamento semanal e relatórios.
           </div>
           <div className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1 mb-2">Vagas limitadas</div>
           <button
