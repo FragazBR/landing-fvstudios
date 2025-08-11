@@ -13,10 +13,10 @@ const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light heading-tight mb-6">
-            <span className="text-gradient font-bold">Conexão, Autoridade</span><br />
-            <span className="text-foreground text-4xl md:text-6xl lg:text-7xl">e Conteúdo que Converte.</span><br />
-            <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-extralight">
-              A nova geração de marcas cresce com <span className="text-white">presença</span>, não com anúncios.
+            <span className="text-gradient font-bold text-3xl md:text-6xl lg:text-7xl leading-[1.1]">Conexão, Autoridade</span><br />
+            <span className="text-foreground text-2xl md:text-6xl lg:text-7xl leading-[1.1]">e Conteúdo que Converte.</span><br />
+            <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-extralight leading-[1.1]">
+              <span className="text-xl md:text-3xl lg:text-4xl leading-[1]">A nova geração de marcas cresce com <span className="text-white">presença</span>, não com anúncios.</span>
             </span>
           </h1>
           

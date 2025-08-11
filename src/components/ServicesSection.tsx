@@ -10,14 +10,25 @@ const ServicesSection = ({ scrollToSection }: ServicesSectionProps) => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 fade-in">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-light heading-tight mb-6">
-            Você não precisa de mais conteúdo. Precisa de uma estratégia que transforma <span className="text-gradient">atenção</span> em <span className="text-gradient">resultado</span>.
+            <span className="block md:hidden text-base font-light heading-tight">
+              Você não precisa de mais conteúdo.<br />
+              Precisa de uma estratégia que<br />
+              transforma <span className="text-gradient font-bold">atenção</span> em <span className="text-gradient font-bold">resultado</span>.
+            </span>
+            <span className="hidden md:inline md:text-4xl lg:text-5xl font-light heading-tight">
+              Você não precisa de mais conteúdo. Precisa de uma estratégia que transforma <span className="text-gradient">atenção</span> em <span className="text-gradient">resultado</span>.
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
-            <span className="block md:inline">
+            <span className="block md:hidden text-base">
+              Nosso trabalho começa entendendo<br />
+              onde sua marca está e termina com
+            </span>
+            <span className="hidden md:inline md:text-xl">
               Nosso trabalho começa entendendo onde sua marca está e termina com
             </span>
-            <span className="block">
-              ela sendo vista, seguida e desejada.
+            <span className="block text-base md:text-xl">
+              ela sendo <span className="text-gradient">vista, seguida e desejada</span>.
             </span>
           </p>
         </div>

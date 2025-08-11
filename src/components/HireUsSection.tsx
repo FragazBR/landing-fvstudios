@@ -153,8 +153,10 @@ const HireUsSection = () => {
               Pronto para <span className="text-gradient">crescer</span> seu negócio?
             </h2>
             <p className="text-xl text-muted-foreground font-light max-w-3xl mx-auto">
-              Um plano de 4 meses para diagnosticar, executar e escalar.
-              Com análise real, acompanhamento contínuo e métricas semanais.
+              <span className="block text-sm md:text-xl">Um plano de 4 meses para</span>
+              <span className="block text-sm md:text-xl"><span className="text-gradient">diagnosticar, executar e escalar.</span></span>
+              <span className="block text-sm md:text-xl">Com análise real, acompanhamento</span>
+              <span className="block text-sm md:text-xl">contínuo e métricas semanais.</span>
             </p>
           </div>
           <div className="max-w-3xl mx-auto fade-in">
