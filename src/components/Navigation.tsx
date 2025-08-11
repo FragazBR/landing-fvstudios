@@ -56,55 +56,56 @@ const Navigation = ({ scrollToSection }: NavigationProps) => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 text-foreground"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-      {/* Fim do nav */}
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
+        className="lg:hidden p-2 text-foreground"
+        aria-label="Abrir menu"
+      >
+        {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+      </button>
+    </div>
+    {/* Fim do nav */}
 
-      {/* Mobile Menu - reescrito para evitar bugs de backdrop e rolagem */}
-      {isMenuOpen && (
-        <div className="lg:hidden fixed inset-0 z-50">
-          {/* Backdrop escuro */}
-          <div className="absolute inset-0 bg-black bg-opacity-70 transition-opacity" onClick={() => setIsMenuOpen(false)}></div>
-          {/* Menu lateral com rolagem e sombra */}
-          <div className="fixed inset-y-0 right-0 w-full max-w-sm h-full bg-[#18181b] border-l border-border shadow-2xl mobile-menu" style={{ overflowY: 'auto' }}>
-            <div className="flex flex-col p-6 pt-20 space-y-6">
-              {[
-                { label: 'Início', id: 'home' },
-                { label: 'Serviços', id: 'services' },
-                { label: 'Contrate', id: 'hire-us' },
-                { label: 'Sobre', id: 'about' },
-                { label: 'FAQ', id: 'faq' }
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => {
-                    scrollToSection(item.id);
-                    setIsMenuOpen(false);
-                  }}
-                  className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  {item.label}
-                </button>
-              ))}
-              <button 
+    {/* Mobile Menu - corrigido para garantir exibição */}
+    {isMenuOpen && (
+      <div className="fixed inset-0 z-50 lg:hidden">
+        {/* Backdrop escuro */}
+        <div className="absolute inset-0 bg-black bg-opacity-70 transition-opacity" onClick={() => setIsMenuOpen(false)}></div>
+        {/* Menu lateral com rolagem e sombra */}
+        <aside className="absolute right-0 top-0 h-full w-full max-w-sm bg-[#18181b] border-l border-border shadow-2xl flex flex-col" style={{ overflowY: 'auto' }}>
+          <nav className="flex flex-col p-6 pt-20 space-y-6">
+            {[
+              { label: 'Início', id: 'home' },
+              { label: 'Serviços', id: 'services' },
+              { label: 'Contrate', id: 'hire-us' },
+              { label: 'Sobre', id: 'about' },
+              { label: 'FAQ', id: 'faq' }
+            ].map((item) => (
+              <button
+                key={item.id}
                 onClick={() => {
-                  scrollToSection('hire-us');
+                  scrollToSection(item.id);
                   setIsMenuOpen(false);
                 }}
-                className="btn-primary w-full mt-8"
+                className="text-left text-lg text-muted-foreground hover:text-foreground transition-colors"
               >
-                QUERO APLICAR
+                {item.label}
               </button>
-            </div>
-          </div>
-        </div>
-      )}
+            ))}
+            <button 
+              onClick={() => {
+                scrollToSection('hire-us');
+                setIsMenuOpen(false);
+              }}
+              className="btn-primary w-full mt-8"
+            >
+              QUERO APLICAR
+            </button>
+          </nav>
+        </aside>
+      </div>
+    )}
       </div>
     </nav>
   );
