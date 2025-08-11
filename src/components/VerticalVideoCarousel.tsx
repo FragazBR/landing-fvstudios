@@ -51,11 +51,12 @@ const CascadeStackCarousel: React.FC = () => {
         maxWidth: CARD_WIDTH * 2.2,
         margin: '0 auto',
         position: 'relative',
-        minHeight: '70vh',
+        minHeight: '60vh',
         overflowX: isMobile ? 'hidden' : undefined,
+        marginBottom: '-2rem',
       }}
     >
-      <div style={{ position: 'relative', height: '65vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: isMobile ? 'hidden' : undefined }}>
+      <div style={{ position: 'relative', height: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: isMobile ? 'hidden' : undefined }}>
         {/* Botão anterior */}
         <button
           onClick={() => setActive((prev) => Math.max(prev - 1, 0))}

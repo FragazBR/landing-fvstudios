@@ -2,7 +2,7 @@ import { CheckCircle, TrendingUp, Users } from 'lucide-react';
 
 const ResultsSectionFood = () => {
   return (
-    <section className="py-20 lg:py-32">
+    <section className="py-10 lg:py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 lg:gap-12">
           {[
