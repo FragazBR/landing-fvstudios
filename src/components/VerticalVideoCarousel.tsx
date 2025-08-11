@@ -114,7 +114,8 @@ const CascadeStackCarousel: React.FC = () => {
       ref={containerRef}
       style={{
         position: 'relative',
-        width: CARD_WIDTH + CARD_WIDTH * 0.05 * 4,
+        width: '100%',
+        maxWidth: CARD_WIDTH,
         height: '70vh',
         margin: '0 auto',
         userSelect: 'none',
@@ -122,6 +123,7 @@ const CascadeStackCarousel: React.FC = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
+        overflowX: 'hidden',
       }}
       onMouseEnter={() => setIsHovering(true)}
       onMouseLeave={() => setIsHovering(false)}
@@ -141,44 +143,38 @@ const CascadeStackCarousel: React.FC = () => {
                 left: `calc(50% + ${offset}px)`,
                 top: '50%',
                 transform: 'translate(-50%, -50%) scale(0.92)',
-                width: CARD_WIDTH,
+                width: '100%',
+                maxWidth: CARD_WIDTH,
                 height: '65vh',
                 zIndex: 100 - rightIdx,
                 opacity: 0.5 + 0.1 * (5 - rightIdx),
                 overflow: 'hidden',
                 cursor: 'default',
-                clipPath: `inset(0 ${CARD_WIDTH * 0.85}px 0 0)`,
-                pointerEvents: 'none',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                background: 'transparent',
-                boxShadow: '0 4px 16px rgba(0,0,0,0.18)',
+                clipPath: 'inset(0 ' + (CARD_WIDTH * 0.85) + 'px 0 0)',
               }}
             >
               <video
                 ref={(el) => (videoRefs.current[idx] = el)}
                 src={src}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  aspectRatio: '9/16',
-                  borderRadius: 'inherit',
-                  background: 'transparent',
-                  opacity: 0.7,
-                }}
-                autoPlay={false}
                 loop
                 muted
                 playsInline
-                controls={false}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transform: 'translate(-50%, -50%)',
+                  borderRadius: '1rem',
+                }}
               />
             </div>
           );
         }
-        // Card principal sempre centralizado e por cima
-        if (isActive) {
+        // Card ativo (frente)
+        else if (rightIdx === 0) {
           return (
             <div
               key={src}
@@ -188,38 +184,35 @@ const CascadeStackCarousel: React.FC = () => {
                 left: '50%',
                 top: '50%',
                 transform: 'translate(-50%, -50%) scale(1)',
-                width: CARD_WIDTH,
+                width: '100%',
+                maxWidth: CARD_WIDTH,
                 height: '65vh',
                 zIndex: 100,
-                opacity: 1,
                 overflow: 'hidden',
-                cursor: 'pointer',
-                boxShadow: '0 12px 40px hsla(220, 15%, 5%, 0.4), 0 0 20px hsla(267, 84%, 68%, 0.1)',
-                background: 'transparent',
+                cursor: 'default',
+                clipPath: 'inset(0px 0 0 0)',
               }}
             >
               <video
                 ref={(el) => (videoRefs.current[idx] = el)}
                 src={src}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  aspectRatio: '9/16',
-                  borderRadius: 'inherit',
-                  background: 'transparent',
-                  opacity: 1,
-                }}
-                autoPlay={isActive}
                 loop
                 muted
                 playsInline
-                controls={false}
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  transform: 'translate(-50%, -50%)',
+                  borderRadius: '1rem',
+                }}
               />
             </div>
           );
         }
-        // Cards à esquerda do ativo ficam ocultos
         return null;
       })}
     </div>
