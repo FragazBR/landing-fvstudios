@@ -10,7 +10,9 @@ const videos = [
   '/videos/video5.mp4',
 ];
 
-const CARD_WIDTH = 400;
+
+// Ajusta largura dos cards para mobile
+const getCardWidth = () => (typeof window !== 'undefined' && window.innerWidth <= 600 ? 280 : 400);
 const CARD_OVERLAP = 12;
 
 
@@ -39,9 +41,21 @@ const CascadeStackCarousel: React.FC = () => {
     });
   }, [active, isPlaying]);
 
+  // Detecta se está em mobile
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 600;
+  const CARD_WIDTH = getCardWidth();
   return (
-    <div style={{ width: '100%', maxWidth: CARD_WIDTH * 2.2, margin: '0 auto', position: 'relative', minHeight: '70vh' }}>
-      <div style={{ position: 'relative', height: '65vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div
+      style={{
+        width: '100%',
+        maxWidth: CARD_WIDTH * 2.2,
+        margin: '0 auto',
+        position: 'relative',
+        minHeight: '70vh',
+        overflowX: isMobile ? 'hidden' : undefined,
+      }}
+    >
+      <div style={{ position: 'relative', height: '65vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: isMobile ? 'hidden' : undefined }}>
         {/* Botão anterior */}
         <button
           onClick={() => setActive((prev) => Math.max(prev - 1, 0))}
@@ -76,6 +90,9 @@ const CascadeStackCarousel: React.FC = () => {
             let x = 0;
             let zIndex = 1;
             let opacity = 0.5;
+            // Ajusta deslocamento lateral para mobile
+            const leftRight = isMobile ? CARD_WIDTH * 0.55 : CARD_WIDTH * 0.7;
+            const farLeftRight = isMobile ? CARD_WIDTH * 0.95 : CARD_WIDTH * 1.3;
             if (offsetIdx === 0) {
               scale = 1.1;
               x = 0;
@@ -83,22 +100,22 @@ const CascadeStackCarousel: React.FC = () => {
               opacity = 1;
             } else if (offsetIdx === -1) {
               scale = 0.9;
-              x = -CARD_WIDTH * 0.7;
+              x = -leftRight;
               zIndex = 5;
               opacity = 0.8;
             } else if (offsetIdx === 1) {
               scale = 0.9;
-              x = CARD_WIDTH * 0.7;
+              x = leftRight;
               zIndex = 5;
               opacity = 0.8;
             } else if (offsetIdx === -2) {
               scale = 0.7;
-              x = -CARD_WIDTH * 1.3;
+              x = -farLeftRight;
               zIndex = 1;
               opacity = 0.5;
             } else if (offsetIdx === 2) {
               scale = 0.7;
-              x = CARD_WIDTH * 1.3;
+              x = farLeftRight;
               zIndex = 1;
               opacity = 0.5;
             } else {
