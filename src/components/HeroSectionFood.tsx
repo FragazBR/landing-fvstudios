@@ -1,29 +1,47 @@
-import { ArrowRight } from 'lucide-react';
 
-interface HeroSectionFoodProps {
+import { ArrowRight } from 'lucide-react';
+import dashboardHero from '@/assets/dashboard-hero.jpg';
+import CascadeStackCarousel from './VerticalVideoCarouselFood';
+
+interface HeroSectionProps {
   scrollToSection: (id: string) => void;
 }
 
-const HeroSectionFood = ({ scrollToSection }: HeroSectionFoodProps) => {
+const HeroSection = ({ scrollToSection }: HeroSectionProps) => {
   return (
     <section id="home" className="pt-20 lg:pt-32 pb-20 lg:pb-32">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center fade-in">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-light heading-tight mb-6">
-            <span className="text-gradient font-bold">Gastronomia que Encanta</span><br />
-            <span className="text-foreground text-4xl md:text-6xl lg:text-7xl">e Vende Todos os Dias.</span><br />
-            <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-extralight">
-              Sua marca de food precisa de presença, não só de promoções.
+            <span className="block md:hidden">
+              <span className="text-gradient font-bold text-3xl leading-[1.1]">Conexão, Autoridade</span><br />
+              <span className="text-2xl">e Conteúdo que Converte.</span>
+            </span>
+            <span className="hidden md:inline">
+              <span className="text-gradient font-bold text-6xl lg:text-7xl leading-[1.1]">Conexão, Autoridade</span><br />
+              <span className="text-foreground text-6xl lg:text-7xl leading-[1.1]">e Conteúdo que Converte.</span>
+            </span>
+            <br></br>
+            <span className="text-muted-foreground text-2xl md:text-3xl lg:text-4xl font-extralight leading-[1]">
+              <span className="block md:hidden text-xl leading-[1]">
+                A nova geração de marcas cresce<br />
+                com <span className="text-white">presença</span>, não com anúncios.
+              </span>
+              <span className="hidden md:inline md:text-3xl lg:text-4xl leading-[1]">
+                <br />A nova geração de marcas cresce com <span className="text-white">presença</span>, não com anúncios.
+              </span>
             </span>
           </h1>
+          
           <p className="text-base md:text-xl lg:text-2xl text-white font-light max-w-4xl mx-auto mb-12 leading-relaxed">
-            Diagnóstico real. Estratégia. Execução. Resultados para restaurantes, franquias e delivery.<br />
-            <span className="text-sm md:text-xl lg:text-2xl text-muted-foreground inline-block mt-2 md:mt-0">Transformamos experiências gastronômicas em desejo e vendas.</span>
+            <span className="text-sm md:text-xl lg:text-2xl">Diagnóstico real. Estratégia. Execução. Resultados.</span><br />
+            <span className="text-sm md:text-xl lg:text-2xl text-muted-foreground inline-block mt-2 md:mt-0">Transformamos histórias em influência. <br />E influência em vendas.</span>
           </p>
+          
           <div className="flex flex-col items-center space-y-4 mb-8">
             <div className="flex flex-col sm:flex-row items-center gap-2">
-              <span className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1">4 meses de transformação</span>
-              <span className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1">Vagas limitadas: 10 operações</span>
+              <span className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1">4 meses de duração</span>
+              <span className="inline-block bg-primary/10 text-primary text-xs font-semibold rounded px-3 py-1">Vagas limitadas: 30 marcas</span>
             </div>
             <span className="text-xs text-primary font-semibold uppercase tracking-wide">Garanta a sua!</span>
             <button 
@@ -35,18 +53,9 @@ const HeroSectionFood = ({ scrollToSection }: HeroSectionFoodProps) => {
             </button>
             <p className="text-sm text-muted-foreground">Clique para entrar na lista de espera</p>
           </div>
-          {/* Card do vídeo Instagram */}
-          <div className="max-w-2xl mx-auto mt-8 fade-in">
-            <div className="aspect-w-9 aspect-h-16 w-full rounded-3xl overflow-hidden shadow-2xl glass-card flex flex-col items-center justify-center">
-              <iframe
-                src="https://www.instagram.com/reel/DF2Rvuyx5-H/embed"
-                title="Vídeo Instagram FVSTUDIOS Food"
-                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture"
-                allowFullScreen
-                className="w-full h-full min-h-[500px]"
-                style={{ border: 0 }}
-              ></iframe>
-            </div>
+
+          <div className="slide-in-left max-w-5xl mx-auto">
+            <CascadeStackCarousel />
           </div>
         </div>
       </div>
@@ -54,4 +63,4 @@ const HeroSectionFood = ({ scrollToSection }: HeroSectionFoodProps) => {
   );
 };
 
-export default HeroSectionFood;
+export default HeroSection;
